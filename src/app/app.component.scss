@@ -11,6 +11,15 @@
   padding-inline: 3.5rem;
   width: 90%;
   margin: 0 auto;
+  h4 {
+    color: #121212;
+    font-family: Poppins;
+    font-size: 1.97688rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.63581rem;
+    padding: 20px;
+  }
 }
 
 .fav-header {
@@ -25,6 +34,15 @@
       margin-left: 0;
     }
   }
+  h3 {
+    color: #202020;
+    font-family: Poppins;
+    font-size: 2.15013rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 12px;
+  }
 }
 
 button {
@@ -32,7 +50,7 @@ button {
   display: flex;
   width: 311px;
   height: 74px;
-  border-radius: 37.852px;
+  border-radius: 2.36575rem;
   border: 1.893px solid #000;
   background-color: #fff;
   justify-content: center;

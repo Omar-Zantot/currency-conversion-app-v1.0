@@ -6,6 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./currency-card.component.scss'],
 })
 export class CurrencyCardComponent {
-  @Input() ImgUrlFlag: string = '../../../assets/images/egy.png';
+  @Input() ImgUrlFlag: string =
+    'https://api.exchangerate-api.com/flag-images/EU.gif';
   @Input() currencyName: string = 'USD';
 }

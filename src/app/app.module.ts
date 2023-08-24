@@ -6,19 +6,16 @@ import { AppComponent } from './app.component';
 import { CustumInputComponent } from './ui-components/custum-input/custum-input.component';
 import { ToggleBtnsComponent } from './ui-components/toggle-btns/toggle-btns.component';
 import { CurrencyCardComponent } from './ui-components/currency-card/currency-card.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     CustumInputComponent,
     ToggleBtnsComponent,
-    CurrencyCardComponent
+    CurrencyCardComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

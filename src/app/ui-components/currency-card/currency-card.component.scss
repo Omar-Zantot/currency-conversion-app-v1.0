@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.line {
+  opacity: 0.2;
+  background: #b9c1d9;
+  height: 0.10981rem;
+  flex-shrink: 0;
+}
+
+:host ::ng-deep .rate {
+  margin: 0;
+  color: #121212;
+  font-family: Montserrat;
+  font-size: 1.97688rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.63581rem;
+}
+
+:host ::ng-deep .custom-checkbox {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: start;
+  cursor: pointer;
+  user-select: none;
+
+  .checkbox-input {
+    display: none;
+  }
+
+  .checkbox {
+    position: relative;
+    width: 25.06px;
+    height: 25.06px;
+    border: 2px solid #b8b8b8;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+  }
+
+  .checkbox-input:checked + .checkbox {
+    background-color: #363636;
+  }
+
+  .checkbox-input:checked + .checkbox::before {
+    content: "\2714"; /* Unicode for checkmark symbol */
+    font-size: 14px;
+    color: white;
+  }
+}
+
+.card {
+  // background-color: #09c;
+  display: flex;
+  height: 7.13863rem;
+  justify-content: space-between;
+  align-items: start;
+  margin-top: 1.76rem;
+
+  .currency-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.76rem;
+
+    img {
+      width: 4.83231rem;
+      height: 4.83231rem;
+      border-radius: 50%;
+    }
+
+    .currency-info {
+      .word {
+        color: #b8b8b8;
+        font-family: Montserrat;
+        font-size: 1.31788rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2.1965rem; /* 166.667% */
+      }
+
+      .currency-name {
+        color: #121212;
+        font-family: Montserrat;
+        font-size: 1.53756rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 2.63581rem;
+      }
+    }
+  }
+
+  .currency-rate {
+    .rate {
+      color: #121212;
+      font-family: Montserrat;
+      font-size: 1.97688rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 2.63581rem;
+    }
+  }
+
+  .custom-checkbox {
+    margin-top: 0.5rem;
+    display: inline-flex;
+    align-items: start;
+    cursor: pointer;
+    user-select: none;
+
+    .checkbox-input {
+      display: none;
+    }
+
+    .checkbox {
+      position: relative;
+      width: 25.06px;
+      height: 25.06px;
+      border: 2px solid #b8b8b8;
+      border-radius: 50%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .checkbox-input:checked + .checkbox {
+      background-color: #363636;
+    }
+
+    .checkbox-input:checked + .checkbox::before {
+      content: "\2714"; /* Unicode for checkmark symbol */
+      font-size: 14px;
+      color: white;
+    }
+  }
+}

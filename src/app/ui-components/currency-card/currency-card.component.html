@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="currency-side">
+    <img src="{{ ImgUrlFlag }}" alt="USD-flag" />
+    <div class="currency-info">
+      <p class="currency-name">{{ currencyName }}</p>
+      <p class="word">CURRENCY</p>
+    </div>
+  </div>
+  <div class="currency-rate">
+    <ng-content select="[rate]"></ng-content>
+    <ng-content selecr="[checkbox]"></ng-content>
+  </div>
+</div>
+<div class="line"></div>

@@ -7,6 +7,7 @@ import { CustumInputComponent } from './ui-components/custum-input/custum-input.
 import { ToggleBtnsComponent } from './ui-components/toggle-btns/toggle-btns.component';
 import { CurrencyCardComponent } from './ui-components/currency-card/currency-card.component';
 import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,

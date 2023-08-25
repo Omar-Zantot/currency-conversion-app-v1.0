@@ -2,7 +2,10 @@
   <ng-container rate>
     <p class="rate">1.3</p>
   </ng-container>
-</app-currency-card>
+</app-currency-card> -->
+
+<!-- &checkgard -->
+<!--
 <app-currency-card>
   <ng-container checkbox>
     <label class="custom-checkbox">
@@ -17,7 +20,7 @@
     <div class="fav-header">
       <h3>live exchange rates</h3>
       <!-- need btn combonent -->
-      <button>
+      <button (click)="toggleCurrencyList()" class="relative">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="37"
@@ -84,29 +87,76 @@
     <h4>My Portofolio</h4>
     <!-- here will be *ngfor  -->
     <div class="fav-list grid-container">
-      <app-currency-card>
-        <ng-container rate>
-          <p class="rate">1.3</p>
-        </ng-container>
-      </app-currency-card>
-      <app-currency-card>
-        <ng-container rate>
-          <p class="rate">1.3</p>
-        </ng-container>
-      </app-currency-card>
-      <app-currency-card>
-        <ng-container rate>
-          <p class="rate">1.3</p>
-        </ng-container>
-      </app-currency-card>
-      <app-currency-card>
-        <ng-container checkbox>
-          <label class="custom-checkbox">
-            <input type="checkbox" class="checkbox-input" />
-            <span class="checkbox"></span>
-          </label>
-        </ng-container>
-      </app-currency-card>
+      <div *ngFor="let selectedCurrency of selectedCurrencies">
+        <app-currency-card [currency]="selectedCurrency">
+          <ng-container rate>
+            <p class="rate">1.4</p>
+          </ng-container>
+        </app-currency-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div *ngIf="showCurrencyList" class="currencyList w-1/2 flex-col">
+  <div *ngFor="let currency of currencies">
+    <app-currency-card [currency]="currency">
+      <ng-container checkbox>
+        <label class="custom-checkbox">
+          <input
+            type="checkbox"
+            class="checkbox-input"
+            (change)="toggleCurrency(currency)"
+          />
+          <span class="checkbox"></span>
+        </label>
+      </ng-container>
+    </app-currency-card>
+  </div>
+</div> -->
+
+<div
+  *ngIf="showCurrencyList"
+  class="fixed inset-0 flex items-center justify-end bg-black bg-opacity-50 z-50"
+>
+  <div
+    class="currency-dialog-card w-[496px] h-[815.809px] absolute top-12 right-36 rounded-[29px] gap-[22.82px] bg-white inline-flex flex-col"
+  >
+    <button
+      class="colse-btn absolute rounded mb-2 right-4 top-[-34px]"
+      (click)="toggleCurrencyList()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="overflow-auto">
+      <div *ngFor="let currency of currencies">
+        <app-currency-card [currency]="currency">
+          <ng-container checkbox>
+            <label class="custom-checkbox">
+              <input
+                type="checkbox"
+                class="checkbox-input"
+                (change)="toggleCurrency(currency)"
+              />
+              <span class="checkbox"></span>
+            </label>
+          </ng-container>
+        </app-currency-card>
+      </div>
     </div>
   </div>
 </div>

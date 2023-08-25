@@ -1,14 +1,14 @@
-<div class="card">
+<div class="card" *ngIf="currency">
   <div class="currency-side">
-    <img src="{{ ImgUrlFlag }}" alt="USD-flag" />
+    <img [src]="currency.flagUrl" [alt]="currency.code + '-flag'" />
     <div class="currency-info">
-      <p class="currency-name">{{ currencyName }}</p>
+      <p class="currency-name">{{ currency.code }}</p>
       <p class="word">CURRENCY</p>
     </div>
   </div>
   <div class="currency-rate">
     <ng-content select="[rate]"></ng-content>
-    <ng-content selecr="[checkbox]"></ng-content>
+    <ng-content select="[checkbox]"></ng-content>
   </div>
 </div>
 <div class="line"></div>

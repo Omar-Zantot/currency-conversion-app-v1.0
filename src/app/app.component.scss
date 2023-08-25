@@ -59,6 +59,17 @@ button {
   flex-shrink: 0;
 }
 
+button.colse-btn {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+
 .fav-header button span {
   color: #363636;
   font-family: Poppins;

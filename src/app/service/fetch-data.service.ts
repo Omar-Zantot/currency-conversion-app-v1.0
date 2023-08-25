@@ -13,27 +13,25 @@ export class CurrencyService {
 
   apiUrl = `${this.baseUrl}/currencies`;
 
-  rateApi = `${this.baseUrl}/rates?from=USD&to=EGP`;
-
-  convert = `${this.baseUrl}/convert?from=USD&to=EGP&amount=1000`;
-
-  compare = `${this.baseUrl}/compare?from=EGP&to=USD,EUR&amount=20`;
-
-  constructor(private http: HttpClient) {
-    console.log('from CurrencyService');
-  }
+  constructor(private http: HttpClient) {}
 
   getCurrencyApi(): Observable<Currency[]> {
     return this.http.get<Currency[]>(this.apiUrl);
   }
-
-  getFavoritesRate() {
-    return this.http.get(this.rateApi);
-  }
-  getConversionResult() {
-    return this.http.get(this.convert);
-  }
-  getCompareResult() {
-    return this.http.get(this.compare);
-  }
 }
+
+// rateApi = `${this.baseUrl}/rates?from=USD&to=EGP`;
+
+// convert = `${this.baseUrl}/convert?from=USD&to=EGP&amount=1000`;
+
+// compare = `${this.baseUrl}/compare?from=EGP&to=USD,EUR&amount=20`;
+
+// getFavoritesRate() {
+//   return this.http.get(this.rateApi);
+// }
+// getConversionResult() {
+//   return this.http.get(this.convert);
+// }
+// getCompareResult() {
+//   return this.http.get(this.compare);
+// }

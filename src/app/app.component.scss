@@ -6,6 +6,51 @@
   box-sizing: border-box;
 }
 
+.currency-exchange {
+  background-image: url("../assets/images/bg.png");
+  background-size: 100% 100%;
+  position: relative;
+  height: 100vh;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.currency-ex-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.box-exchange {
+  width: 41.87256rem;
+  height: 45.5625rem;
+  border-radius: 1.13981rem;
+  background: linear-gradient(
+    134deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(157, 157, 157, 0.2) 100%
+  );
+  backdrop-filter: blur(4.504402160644531px);
+  z-index: 5;
+}
+
+nav {
+  width: 307px;
+  height: 68.489px;
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  padding-top: 5.05rem;
+  margin-left: 9.0625rem;
+}
+nav img {
+  width: 307px;
+  height: 52.489px;
+}
+
+// fav-part
 .container {
   padding-block-start: 2rem;
   padding-inline: 3.5rem;

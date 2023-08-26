@@ -1,6 +1,15 @@
 <loader *ngIf="showLoader"></loader>
 
 <ng-container *ngIf="currenciesFromAPI$ | async as CurrenciesFromAPI">
+  <div class="currency-exchange">
+    <div class="margin-collapse">
+      <nav><img src="../assets/images/logo.png" alt="logo" /></nav>
+    </div>
+    <div class="currency-ex-card">
+      <app-converter></app-converter>
+    </div>
+  </div>
+
   <div class="fav-section">
     <div class="container">
       <div class="fav-header">

@@ -12,6 +12,8 @@ import { FilterFavCurrencyPipe } from './pipes/filter-fav-currency.pipe';
 import { GetFavCurrencyPipe } from './pipes/get-fav-currency.pipe';
 import { CloseBtnComponent } from './ui-components/btns/close-btn/close-btn.component';
 import { AddBtnComponent } from './ui-components/btns/add-btn/add-btn.component';
+import { CurrencyExchangeModule } from './currency-exchange/currency-exchange.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,13 @@ import { AddBtnComponent } from './ui-components/btns/add-btn/add-btn.component'
     CloseBtnComponent,
     AddBtnComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    CurrencyExchangeModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

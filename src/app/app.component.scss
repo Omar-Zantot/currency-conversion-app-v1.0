@@ -52,18 +52,18 @@ nav img {
 
 // fav-part
 .container {
-  padding-block-start: 2rem;
+  margin-bottom: 168.11px;
+  margin-top: 78.83px;
   padding-inline: 3.5rem;
   width: 90%;
-  margin: 0 auto;
+  margin-inline: auto;
   h4 {
     color: #121212;
-    font-family: Poppins;
     font-style: normal;
-    font-weight: 400;
-    line-height: 2.63581rem;
-    padding: 20px;
-    font-family: SF Pro Display;
+    font-weight: 700;
+    line-height: 2.4901rem;
+    padding: 1.25rem;
+    font-family: "SF Pro Display";
     font-size: 1.86756rem;
   }
 }
@@ -73,6 +73,8 @@ nav img {
   grid-template-columns: repeat(2, minmax(350px, 1fr));
   gap: 20px;
   padding: 20px;
+  // margin-top: 4.9269rem;
+  // margin-bottom: 10.5069rem;
 
   @media (max-width: 776px) {
     grid-template-columns: 1fr;
@@ -84,6 +86,7 @@ nav img {
     color: #202020;
     font-family: Montserrat;
     font-size: 2.03125rem;
+
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -159,4 +162,12 @@ button.colse-btn {
   font-style: normal;
   font-weight: 500;
   line-height: 2.02113rem; /* 133.333% */
+}
+
+.overLay {
+  fill: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.9) 0%,
+    rgba(217, 217, 217, 0) 100%
+  );
 }

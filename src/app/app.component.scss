@@ -14,11 +14,12 @@
   h4 {
     color: #121212;
     font-family: Poppins;
-    font-size: 1.97688rem;
     font-style: normal;
     font-weight: 400;
     line-height: 2.63581rem;
     padding: 20px;
+    font-family: SF Pro Display;
+    font-size: 1.86756rem;
   }
 }
 
@@ -36,8 +37,8 @@
   }
   h3 {
     color: #202020;
-    font-family: Poppins;
-    font-size: 2.15013rem;
+    font-family: Montserrat;
+    font-size: 2.03125rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
@@ -50,6 +51,7 @@ button {
   display: flex;
   width: 311px;
   height: 74px;
+
   border-radius: 2.36575rem;
   border: 1.893px solid #000;
   background-color: #fff;
@@ -73,7 +75,7 @@ button.colse-btn {
 .fav-header button span {
   color: #363636;
   font-family: Poppins;
-  font-size: 20px;
+  font-size: 1.41944rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -99,4 +101,8 @@ button.colse-btn {
   border: 1px solid #ddd;
   padding: 20px;
   text-align: center;
+}
+
+.currency-dialog-card {
+  padding-inline: 20px;
 }

@@ -5,8 +5,15 @@
     <div class="margin-collapse">
       <nav><img src="../assets/images/logo.png" alt="logo" /></nav>
     </div>
-    <div class="currency-ex-card">
-      <app-converter></app-converter>
+    <div class="currency-ex-card flex-col">
+      <app-converter *ngIf="activeTab === 'convert'">
+        <toggle-btns
+          [toggleData]="toggleData"
+          (setActive$)="activeTab = $event"
+        ></toggle-btns>
+      </app-converter>
+
+      <p *ngIf="activeTab === 'compare'">Compare ****************</p>
     </div>
   </div>
 

@@ -3,6 +3,7 @@ import { CurrencyService } from './service/fetch-data.service';
 import { Currency, ExchangeRate } from './service/currency.model';
 import { TargetCurrencies } from './service/data.static';
 import { delay, finalize, first, map, switchMap, take } from 'rxjs';
+import { ToggleStaticsData } from './static/toggle-data';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,8 @@ import { delay, finalize, first, map, switchMap, take } from 'rxjs';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  toggleData = ToggleStaticsData;
+  activeTab = ToggleStaticsData[0].status;
   protected showLoader = true;
   public showFavoriteCurrencies = false;
 

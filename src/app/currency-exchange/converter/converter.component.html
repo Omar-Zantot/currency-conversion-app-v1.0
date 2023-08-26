@@ -1,37 +1,40 @@
-<form class="my-36">
-  <div class="fristslect">
-    <div class="Amount">
-      <h2>Amount</h2>
-      <div>
-        <input name="text" type="string" [(ngModel)]="inputValue" />
+<form class="">
+  <div class="flex flex-col justify-center items-center gap-12 h-[100%]">
+    <ng-content></ng-content>
+    <div class="fristslect">
+      <div class="Amount">
+        <h2>Amount</h2>
+        <div>
+          <input name="text" type="string" [(ngModel)]="inputValue" />
+        </div>
+      </div>
+
+      <div class="from">
+        <h2>From</h2>
+        <select #select>
+          <option [value]="o" *ngFor="let o of options">{{ o }}</option>
+        </select>
       </div>
     </div>
+    <div class="fristslect">
+      <div class="from">
+        <h2>To</h2>
+        <select #dropdown>
+          <option [value]="o" *ngFor="let o of options">{{ o }}</option>
+        </select>
+      </div>
 
-    <div class="from">
-      <h2>From</h2>
-      <select #select>
-        <option [value]="o" *ngFor="let o of options">{{ o }}</option>
-      </select>
-    </div>
-  </div>
-  <div class="fristslect">
-    <div class="from">
-      <h2>To</h2>
-      <select #dropdown>
-        <option [value]="o" *ngFor="let o of options">{{ o }}</option>
-      </select>
-    </div>
-
-    <div class="Amount">
-      <h2>Amount</h2>
-      <div>
-        <input name="text" type="text" readonly="readonly" value="" />
+      <div class="Amount">
+        <h2>Amount</h2>
+        <div>
+          <input name="text" type="text" readonly="readonly" value="" />
+        </div>
       </div>
     </div>
-  </div>
-  <div>
-    <button (click)="getSelectValue()" class="btn" type="button">
-      Convert
-    </button>
+    <div>
+      <button (click)="getSelectValue()" class="btn" type="button">
+        Convert
+      </button>
+    </div>
   </div>
 </form>

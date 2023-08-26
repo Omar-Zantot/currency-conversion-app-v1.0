@@ -1,0 +1,21 @@
+:host {
+  @apply flex w-[472.782px] h-[81.487px] p-[15.112px] justify-center items-center gap-[15.112px] rounded-[34.037px] bg-[#F0F0F0];
+}
+
+.toggle-btn {
+  @apply flex w-[204.583px]  h-[69.35px]  p-[13.788px] justify-center items-center gap-[13.788px] rounded-[31.055px] bg-[transparent] transition-all duration-300;
+}
+.toggle-btn_active {
+  @apply bg-white;
+}
+
+button {
+  span {
+    color: #141414;
+    font-family: Poppins;
+    font-size: 20.805px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

@@ -9,14 +9,15 @@
   );
   backdrop-filter: blur(4.504402160644531px);
   z-index: 5;
+  display: grid;
+  place-content: center;
 }
 
 form {
   .fristslect {
     display: flex;
     // padding: 10rem;
-    margin-left: 4.5rem;
-    gap: 2rem;
+    gap: 0.9425rem;
 
     input {
       width: 182.424px;
@@ -32,7 +33,7 @@ form {
       font-weight: 600;
       line-height: normal;
       padding: 0 2rem;
-      margin-bottom: 3rem;
+      // margin-bottom: 3rem;
       outline-color: rgba(0, 157, 157, 0.2);
     }
 
@@ -43,7 +44,7 @@ form {
       font-style: normal;
       font-weight: 600;
       line-height: normal;
-      margin-bottom: 1rem;
+      margin-bottom: 1.7669rem;
     }
   }
 
@@ -59,9 +60,8 @@ form {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    padding: auto;
+
     margin-top: 5%;
-    margin-left: 15%;
   }
 
   select {
@@ -79,5 +79,6 @@ form {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    outline-color: rgba(0, 157, 157, 0.2);
   }
 }

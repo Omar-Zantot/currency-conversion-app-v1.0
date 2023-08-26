@@ -67,18 +67,18 @@ form {
   select {
     width: 277.404px;
     height: 72.366px;
-    flex-shrink: 0;
     border-radius: 30.153px;
     border: 0.754px solid #c5c5c5;
     background: #f9f9f9;
     padding: 0 2rem;
-
-    color: #202020;
-    font-family: Open Sans;
-    font-size: 21.107px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
     outline-color: rgba(0, 157, 157, 0.2);
+    option {
+      color: #202020;
+      font-family: Poppins;
+      font-size: 23.908px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
   }
 }

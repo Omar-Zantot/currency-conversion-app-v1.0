@@ -1,0 +1,19 @@
+.custom-select {
+  position: relative;
+  display: inline-block;
+
+  select {
+    appearance: none;
+    padding: 5px;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .selected-image {
+    width: 20px; /* Set the desired width for the image */
+    height: auto; /* Maintain the aspect ratio */
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+}

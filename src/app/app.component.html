@@ -12,8 +12,12 @@
           (setActive$)="activeTab = $event"
         ></toggle-btns>
       </app-converter>
-
-      <p *ngIf="activeTab === 'compare'">Compare ****************</p>
+      <app-compare *ngIf="activeTab === 'compare'">
+        <toggle-btns
+          [toggleData]="toggleData"
+          (setActive$)="activeTab = $event"
+        ></toggle-btns>
+      </app-compare>
     </div>
   </div>
 

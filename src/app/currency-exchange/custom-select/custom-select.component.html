@@ -1,0 +1,13 @@
+<div class="custom-select">
+  <select [(ngModel)]="selectedOption">
+    <option *ngFor="let option of options; let i = index" [value]="i">
+      {{ option.name }}
+    </option>
+  </select>
+  <img
+    *ngIf="selectedOption !== null"
+    [src]="options[selectedOption].image"
+    alt="Selected Image"
+    class="selected-image"
+  />
+</div>

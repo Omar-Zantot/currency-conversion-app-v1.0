@@ -12,7 +12,7 @@ export class ConverterComponent {
   selectedValue?: string;
   inputValue!: string;
   outputValue: string = '';
-  options = ['Egypt', 'USD', 'Itly', 'Saudi Arabia'];
+  options = ['EGP', 'USD', 'SAR', 'EUR'];
 
   getSelectValue() {
     this.selected = this.select?.nativeElement.value;

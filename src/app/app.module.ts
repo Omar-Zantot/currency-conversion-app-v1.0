@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustumInputComponent as CustomInputComponent } from './ui-components/custum-input/custum-input.component';
 import { ToggleBtnsComponent } from './ui-components/btns/toggle-btns/toggle-btns.component';
 import { CurrencyCardComponent } from './ui-components/currency-card/currency-card.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +17,6 @@ import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    CustomInputComponent,
     ToggleBtnsComponent,
     CurrencyCardComponent,
     LoaderComponent,

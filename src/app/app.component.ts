@@ -11,7 +11,7 @@ import { delay, finalize, first, map, switchMap, take } from 'rxjs';
 })
 export class AppComponent {
   protected showLoader = true;
-  protected showFavoriteCurrencies = false;
+  public showFavoriteCurrencies = false;
 
   protected currenciesFromAPI$ = this._initGetCurrencies();
 

@@ -7,7 +7,7 @@
 :host ::ng-deep .rate {
   margin: 0;
   color: #121212;
-  font-family: "Montserrat";
+  font-family: "Poppins";
   font-size: 1.86756rem;
   font-style: normal;
   font-weight: 500;
@@ -17,7 +17,7 @@
 :host ::ng-deep .custom-checkbox {
   margin-top: 0.5rem;
   display: inline-flex;
-  align-items: start;
+  align-items: flex-start;
   cursor: pointer;
   user-select: none;
 
@@ -54,7 +54,7 @@
   display: flex;
   height: 7.13863rem;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   margin-top: 1.76rem;
 
   .currency-side {
@@ -67,6 +67,7 @@
       width: 4.83231rem;
       height: 4.83231rem;
       border-radius: 50%;
+      object-fit: cover;
     }
 
     .currency-info {
@@ -104,7 +105,7 @@
   .custom-checkbox {
     margin-top: 0.5rem;
     display: inline-flex;
-    align-items: start;
+    align-items: flex-start;
     cursor: pointer;
     user-select: none;
 
@@ -130,9 +131,9 @@
     }
 
     .checkbox-input:checked + .checkbox::before {
-      content: "\2713";
+      content: "\002713";
       font-size: 14px;
-      color: white;
+      color: #fff;
     }
   }
 }

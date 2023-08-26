@@ -1,0 +1,22 @@
+button {
+  margin-left: auto;
+  display: flex;
+  width: 311px;
+  height: 74px;
+
+  border-radius: 2.36575rem;
+  border: 1.893px solid #000;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  gap: 18.926px;
+  flex-shrink: 0;
+}
+button span {
+  color: #363636;
+  font-family: Poppins;
+  font-size: 1.41944rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

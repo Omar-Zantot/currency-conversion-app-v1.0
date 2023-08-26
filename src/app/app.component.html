@@ -6,72 +6,9 @@
       <div class="fav-header">
         <h3>live exchange rates</h3>
         <!-- need btn combonent -->
-        <button (click)="showFavoriteCurrencies = true" class="relative">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="37"
-            height="36"
-            viewBox="0 0 37 36"
-            fill="none"
-          >
-            <g clip-path="url(#clip0_281_6709)">
-              <path
-                d="M18.8757 11.6779V24.3199"
-                stroke="#363636"
-                stroke-width="2.80935"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M12.5551 17.9988H25.1971"
-                stroke="#363636"
-                stroke-width="2.80935"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <mask
-                id="mask0_281_6709"
-                style="mask-type: luminance"
-                maskUnits="userSpaceOnUse"
-                x="0"
-                y="0"
-                width="37"
-                height="36"
-              >
-                <path
-                  d="M0.895874 0.0201912H36.8556V35.9799H0.895874V0.0201912Z"
-                  fill="white"
-                />
-              </mask>
-              <g mask="url(#mask0_281_6709)">
-                <path
-                  d="M27.451 32.1877C24.9491 33.7032 22.0142 34.5757 18.8755 34.5757C9.72127 34.5757 2.30029 27.1547 2.30029 18.0005C2.30029 8.84622 9.72127 1.42531 18.8755 1.42531C28.0298 1.42531 35.4507 8.84622 35.4507 18.0005C35.4507 21.4045 34.4012 24.5688 32.6413 27.2011"
-                  stroke="#363636"
-                  stroke-width="2.80935"
-                  stroke-miterlimit="10"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-            </g>
-            <defs>
-              <clipPath id="clip0_281_6709">
-                <rect
-                  width="35.9597"
-                  height="35.9597"
-                  fill="white"
-                  transform="translate(0.895996 0.0201416)"
-                />
-              </clipPath>
-            </defs>
-          </svg>
-          <span>Add to Favorites</span>
-        </button>
+        <add-btn (click)="showFavoriteCurrencies = true"></add-btn>
       </div>
       <h4>My Portfolio</h4>
-      <!-- here will be *ngfor  -->
       <div class="fav-list grid-container">
         <div
           *ngFor="let selectedCurrency of CurrenciesFromAPI | filterFavCurrency"
@@ -87,7 +24,7 @@
       </div>
     </div>
   </div>
-  <!-- favorites currencies -->
+  <!-- ^ === {list of fav} -->
   <div
     *ngIf="showFavoriteCurrencies"
     class="fixed inset-0 z-50 flex items-center justify-end bg-black bg-opacity-50"
@@ -95,33 +32,15 @@
     <div
       class="currency-dialog-card w-[496px] h-[815.809px] absolute top-12 right-36 rounded-[29px] gap-[22.82px] bg-white inline-flex flex-col"
     >
-      <button
-        class="colse-btn absolute rounded mb-2 right-4 top-[-34px]"
-        (click)="showFavoriteCurrencies = false"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-
+      <close-btn (click)="showFavoriteCurrencies = false"></close-btn>
       <div class="overflow-auto">
+        <h3 class="title">My Favorites</h3>
         <div *ngFor="let currency of CurrenciesFromAPI">
           <app-currency-card [currency]="currency">
             <label checkbox class="custom-checkbox">
               <input
                 type="checkbox"
-                class="checkbox-input"
+                class="px-5 checkbox-input"
                 (change)="toggleCurrency(currency, CurrenciesFromAPI)"
                 [checked]="currency.checked"
               />

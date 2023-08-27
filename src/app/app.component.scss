@@ -13,6 +13,14 @@
   overflow: hidden;
 }
 
+.overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.9) 0%,
+    rgba(217, 217, 217, 0) 100%
+  );
+}
+
 .carda {
   width: 41.87256rem;
   height: 45.5625rem;

@@ -4,6 +4,13 @@
   z-index: 20;
   left: 470px;
   top: 181px;
+  margin-block: 30px;
+  @media screen and (max-width: 1024px) {
+    left: 273px;
+  }
+  @media screen and (max-width: 768px) {
+    left: 149px;
+  }
 }
 
 .toggle-btn {

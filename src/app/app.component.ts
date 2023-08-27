@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrencyService } from './service/fetch-data.service';
 import { Currency, ExchangeRate } from './service/currency.model';
-import { TargetCurrencies } from './service/data.static';
+// import { TargetCurrencies } from './service/data.static';
 import { delay, finalize, first, map, switchMap, take } from 'rxjs';
 import { ToggleStaticsData } from './static/toggle-data';
 
@@ -19,8 +19,7 @@ export class AppComponent {
   protected currenciesFromAPI$ = this._initGetCurrencies();
 
   baseCurrency = 'EGP';
-  // i need to set this after calling list
-  targetCurrencies = TargetCurrencies;
+  // targetCurrencies = TargetCurrencies;
 
   exchangeRates: ExchangeRate[] = [];
 
@@ -29,8 +28,6 @@ export class AppComponent {
   private _initGetCurrencies() {
     return this.currencyService.getCurrenciesFromStore$.pipe(
       switchMap((currencyList) => {
-        // always get new value on update store
-        // currenciesStore$.next(currencyList)
         console.log(currencyList);
         return this.fetchExchangeRates(currencyList);
       })

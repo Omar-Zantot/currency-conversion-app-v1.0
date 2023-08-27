@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-custom-select',
   templateUrl: './custom-select.component.html',
-  styleUrls: ['./custom-select.component.css'],
+  styleUrls: ['./custom-select.component.scss'],
 })
 export class CustomSelectComponent implements OnInit {
   selectedOption: number | null = null;

@@ -43,9 +43,9 @@
   }
 
   .checkbox-input:checked + .checkbox::before {
-    content: "\2714"; /* Unicode for checkmark symbol */
-    font-size: 14px;
-    color: white;
+    content: "\2714";
+    font-size: 11px;
+    color: #fff;
   }
 }
 
@@ -77,7 +77,7 @@
         font-size: 1.31788rem;
         font-style: normal;
         font-weight: 400;
-        line-height: 2.1965rem; /* 166.667% */
+        line-height: 2.1965rem;
       }
 
       .currency-name {
@@ -131,9 +131,9 @@
     }
 
     .checkbox-input:checked + .checkbox::before {
-      content: "\002713";
-      font-size: 14px;
-      color: #fff;
+      content: "\2713";
+      color: white;
+      font-size: 11px;
     }
   }
 }

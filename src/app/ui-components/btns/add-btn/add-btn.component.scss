@@ -12,6 +12,13 @@ button {
   gap: 18.926px;
   flex-shrink: 0;
 }
+
+@media (max-width: 768px) {
+  button {
+    margin: auto;
+  }
+}
+
 button span {
   color: #363636;
   font-family: Poppins;

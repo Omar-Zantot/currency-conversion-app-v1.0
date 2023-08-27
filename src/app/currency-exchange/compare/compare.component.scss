@@ -11,6 +11,11 @@
   z-index: 5;
   display: grid;
   place-content: center;
+
+  @media screen and (max-width: 768px) {
+    // width: 33.87256rem;
+    // height: 43.5625rem;
+  }
 }
 
 .amount-input {

@@ -11,7 +11,7 @@ import {
   startWith,
   tap,
 } from 'rxjs';
-import { Currency, ExchangeRate } from './currency.model';
+import { Currency, CurrencyConversion, ExchangeRate } from './currency.model';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +28,7 @@ export class CurrencyService {
     .pipe(filter((v) => !!v?.length));
 
   constructor(private http: HttpClient) {
-    interval(36000)
+    interval(3600000)
       .pipe(
         startWith(0),
         tap(() => {
@@ -79,5 +79,15 @@ export class CurrencyService {
     return JSON.parse(
       localStorage.getItem('selectedCurrencies') ?? '[]'
     ) as Currency[];
+  }
+
+  public getConvertResult(
+    from: string,
+    to: string,
+    amount: number
+  ): Observable<CurrencyConversion> {
+    // /convert?from=USD&to=EGP&amount=100
+    const converterUrl = `${this.baseUrl}//convert?from=${from}&to=${to}&amount=${amount}`;
+    return this.http.get<CurrencyConversion>(converterUrl);
   }
 }

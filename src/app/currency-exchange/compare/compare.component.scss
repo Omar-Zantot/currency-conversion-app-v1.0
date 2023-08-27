@@ -16,6 +16,10 @@
     // width: 33.87256rem;
     // height: 43.5625rem;
   }
+  @media screen and (max-width:426px){
+    width: 410px;
+    }
+
 }
 
 .amount-input {
@@ -38,6 +42,14 @@
     font-weight: 600px;
     margin-bottom: 2rem;
     margin: auto;
+
+    @media screen and (max-width:426px){
+      width: 140px;
+      }
+
+    // @media screen and (max-width:426px){
+    // width: 125px;
+    // }
   }
 
   h2 {
@@ -49,6 +61,9 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    @media screen and (max-width:426px){
+    width: 20px;
+    }
   }
 
   select {
@@ -59,6 +74,9 @@
     background: #f9f9f9;
     padding: 0 2rem;
     // color: #000;
+    @media screen and (max-width:426px){
+    width: 140px;
+    }
     option {
       color: #202020;
       font-family: Poppins;
@@ -88,6 +106,10 @@
   font-weight: 700;
   line-height: normal;
   padding: auto;
+
+  @media screen and (max-width:426px){
+  width: 400px;
+  }
 }
 
 .output {

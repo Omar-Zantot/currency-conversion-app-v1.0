@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 // import { CustomSelectComponent } from './custom-select/custom-select.component';
 // import { CustumSelectComponent } from './custum-select/custum-select.component';
 
+
 @NgModule({
   declarations: [ConverterComponent, CompareComponent],
   imports: [CommonModule, FormsModule],

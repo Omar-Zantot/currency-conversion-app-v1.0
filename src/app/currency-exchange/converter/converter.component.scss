@@ -11,6 +11,9 @@
   z-index: 5;
   display: grid;
   place-content: center;
+  @media screen and (max-width:426px){
+  width: 410px;
+  }
 }
 
 form {
@@ -60,8 +63,11 @@ form {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-
     margin-top: 5%;
+
+    @media screen and (max-width:426px){
+    width: 400px;
+    }
   }
 
   select {
@@ -72,6 +78,11 @@ form {
     background: #f9f9f9;
     padding: 0 2rem;
     outline-color: rgba(0, 157, 157, 0.2);
+
+    @media screen and (max-width:426px) {
+      width: 150px;
+      
+    }
     option {
       color: #202020;
       font-family: Poppins;

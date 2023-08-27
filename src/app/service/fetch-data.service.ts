@@ -86,7 +86,6 @@ export class CurrencyService {
     to: string,
     amount: number
   ): Observable<CurrencyConversion> {
-    // /convert?from=USD&to=EGP&amount=100
     const converterUrl = `${this.baseUrl}//convert?from=${from}&to=${to}&amount=${amount}`;
     return this.http.get<CurrencyConversion>(converterUrl);
   }

@@ -42,8 +42,7 @@
     background-color: #363636;
   }
 
-  .checkbox-input:checked + .checkbox::before {
-    content: "\2714";
+  .checkbox-input:checked {
     font-size: 11px;
     color: #fff;
   }

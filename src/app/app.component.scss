@@ -8,11 +8,29 @@
 }
 
 .currency-ex-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 81vh;
+  display: grid;
+  place-content: center;
   overflow: hidden;
+}
+
+.carda {
+  width: 41.87256rem;
+  height: 45.5625rem;
+  border-radius: 1.13981rem;
+  background: linear-gradient(
+    134deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(157, 157, 157, 0.2) 100%
+  );
+  backdrop-filter: blur(4.504402160644531px);
+  z-index: 5;
+  display: grid;
+  place-content: center;
+  // gap: 52px;
+  // position: absolute;
+  // left: 28%;
+  margin-inline: auto;
+  overflow: auto; /* Add this line to enable scrollbars if content overflows */
 }
 
 .box-exchange {
@@ -33,13 +51,11 @@
 }
 
 nav {
-  // background-color: red;
-  // width: 307px;
-  // height: 68.489px;
   display: flex;
   justify-content: flex-start;
   position: sticky;
   padding-top: 5.05rem;
+  margin-bottom: 30px;
 }
 nav img {
   width: 307px;

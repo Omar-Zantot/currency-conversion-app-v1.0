@@ -1,8 +1,8 @@
 :host {
-  @apply flex items-center justify-center fixed inset-0 z-50;
+  @apply flex items-center justify-center fixed inset-0 z-50 bg-transparent;
   background: linear-gradient(
     134deg,
-    rgba(0, 0, 0, 0.4) 0%,
+    rgba(174, 168, 168, 0.4) 0%,
     rgba(0, 157, 157, 0.2) 100%
   );
   backdrop-filter: blur(4.504402160644531px);
@@ -18,7 +18,7 @@
 .lds-spinner div {
   transform-origin: 40px 40px;
   // animation: lds-spinner 1.2s linear infinite;
-  animation: lds-spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  animation: lds-spinner 400ms cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
 .lds-spinner div:after {
   content: " ";
@@ -29,7 +29,7 @@
   width: 6px;
   height: 18px;
   border-radius: 20%;
-  background: #fff;
+  background: #009791;
 }
 .lds-spinner div:nth-child(1) {
   transform: rotate(0deg);

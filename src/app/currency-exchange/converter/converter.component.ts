@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { finalize } from 'rxjs';
 import {
   CurrencyConversion,
   DropdownItem,
@@ -39,20 +40,18 @@ export class ConverterComponent {
   }
 
   performCurrencyConversion() {
-    if (!this.isValidInput()) {
+    if (!this.isValidInput() && !this.inputValue) {
       this.errorMessage = 'Please enter a valid amount.';
+      alert(this.errorMessage);
       return;
     }
 
-    if (!this.selectedCurrencyFrom || !this.selectedCurrencyTo) {
-      this.errorMessage = 'Please select both currencies.';
-      return;
-    }
     if (
       this.isValidInput() &&
       this.selectedCurrencyFrom &&
       this.selectedCurrencyTo
     ) {
+      console.log('clicked');
       this.showLoader = true;
 
       const v$ = this.currencyService.getConvertResult(
@@ -63,12 +62,14 @@ export class ConverterComponent {
       v$.subscribe({
         next: (conversionResult) => {
           this.outputValue = conversionResult.value.toFixed(2);
+          this.showLoader = false;
         },
         error: (error) => {
           console.error('Conversion error:', error);
         },
         complete: () => {
-          this.showLoader = false; // Hide loader when data is fetched
+          this.showLoader = false;
+          // Hide loader when data is fetched
         },
       });
     }
@@ -92,5 +93,6 @@ export class ConverterComponent {
         this.selectedCurrencyFrom = null;
       }
     }
+    // this.selectedCurrency.emit(selectedCurrencyCode);
   }
 }

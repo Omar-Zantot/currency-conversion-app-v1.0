@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CurrencyService } from './service/fetch-data.service';
 import { Currency, ExchangeRate } from './service/currency.model';
 // import { TargetCurrencies } from './service/data.static';
 import { delay, finalize, first, map, switchMap, take } from 'rxjs';
 import { ToggleStaticsData } from './static/toggle-data';
+import { ConverterComponent } from './currency-exchange/converter/converter.component';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +19,14 @@ export class AppComponent {
 
   protected currenciesFromAPI$ = this._initGetCurrencies();
 
-  baseCurrency = 'EGP';
+  // baseCurrency = 'EGP';
   // targetCurrencies = TargetCurrencies;
+  // @ViewChild(ConverterComponent) converterComponent?: ConverterComponent;
+
+  baseCurrency: string = 'EGP'; // Initialize with a default value
+  // updateBaseCurrency(selectedCurrency: string) {
+  //   this.baseCurrency = selectedCurrencyFrom;
+  // }
 
   exchangeRates: ExchangeRate[] = [];
 

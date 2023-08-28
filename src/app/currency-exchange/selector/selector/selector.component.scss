@@ -87,6 +87,8 @@
   .dropdown-button {
     height: 72.36px;
    width: 20px;
+
+   
   }
 }
 
@@ -109,7 +111,8 @@
     top: calc(100% + 4px);
     left: 25%;
     z-index: 100 !important;
-    width: 100%;
+    //width: 100%;
+    width: 110px;
     max-height: 200px;
     overflow-x: hidden;
   }

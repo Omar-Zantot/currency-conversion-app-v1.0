@@ -50,8 +50,12 @@ form {
       outline-color: rgba(0, 157, 157, 0.2);
       @media screen and (max-width: 376px) {
         width: 138px;
+       // font-size: 20px;
       }
+       @media screen and (max-width: 426px) {
+      font-size: 20px;
     }
+  }
 
     h2 {
       color: #fff;

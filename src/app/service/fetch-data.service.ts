@@ -89,4 +89,13 @@ export class CurrencyService {
     const converterUrl = `${this.baseUrl}//convert?from=${from}&to=${to}&amount=${amount}`;
     return this.http.get<CurrencyConversion>(converterUrl);
   }
+
+  getCompareResult(
+    from: string,
+    to: string,
+    amount: number
+  ): Observable<CurrencyConversion> {
+    const compareterUrl = `${this.baseUrl}/compare?from=${from}&to=${to}&amount=${amount}`;
+    return this.http.get<CurrencyConversion>(compareterUrl);
+  }
 }

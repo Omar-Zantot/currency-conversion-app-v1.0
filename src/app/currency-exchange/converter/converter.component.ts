@@ -54,12 +54,13 @@ export class ConverterComponent {
       }
 
 
-    // alert(`Input filed value${this.inputValue}`)
-    // alert(`Input filed value${this.outputValue}`)
+      // alert(`Input filed value${this.inputValue}`)
+      // alert(`Input filed value${this.outputValue}`)
 
-    if (!isNaN(this.inputValue) && this.inputValue > 0) {
-      const storeAmount = this.inputValue;
+      if (!isNaN(this.inputValue) && this.inputValue > 0) {
+        const storeAmount = this.inputValue;
 
+      }
     }
   }
 }

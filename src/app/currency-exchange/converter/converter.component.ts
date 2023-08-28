@@ -14,7 +14,6 @@ import { CurrencyService } from 'src/app/service/fetch-data.service';
 export class ConverterComponent {
   @ViewChild('dropdownFrom', { static: false }) dropdownFrom?: ElementRef;
   @ViewChild('dropdownTo', { static: false }) dropdownTo?: ElementRef;
-  // protected showLoader = true;
   @Input() showLoader = false; // Receive showLoader as Input
   inputValue!: number;
   outputValue: string = '';
@@ -92,9 +91,6 @@ export class ConverterComponent {
       if (this.selectedCurrencyTo === this.selectedCurrencyFrom) {
         this.selectedCurrencyFrom = null;
       }
-
-      // alert(`Input filed value${this.inputValue}`)
-      // alert(`Input filed value${this.outputValue}`)
 
       if (!isNaN(this.inputValue) && this.inputValue > 0) {
         const storeAmount = this.inputValue;

@@ -92,8 +92,15 @@ export class CurrencyService {
     return this.http.get<CurrencyConversion>(converterUrl);
   }
 
-  public getCompareResult(from: string, to: string, amount: number) {
-    // https://currency-converter-production-3e05.up.railway.app/api/currency-conversions
-    const compareUrl = `${this.baseUrl}/compare?from=${from}&to=${to}&amount=${amount}`;
+ 
+  getCompareResult(
+    from: string,
+    to: string,
+    amount: number
+  ): Observable<CurrencyConversion> {
+    const compareterUrl = `${this.baseUrl}/compare?from=${from}&to=${to}&amount=${amount}`;
+    return this.http.get<CurrencyConversion>(compareterUrl);
+
+
   }
 }

@@ -92,7 +92,16 @@ export class ConverterComponent {
       if (this.selectedCurrencyTo === this.selectedCurrencyFrom) {
         this.selectedCurrencyFrom = null;
       }
-    }
-    // this.selectedCurrency.emit(selectedCurrencyCode);
-  }
+>>>>> compare
+
+
+      // alert(`Input filed value${this.inputValue}`)
+      // alert(`Input filed value${this.outputValue}`)
+
+      if (!isNaN(this.inputValue) && this.inputValue > 0) {
+        const storeAmount = this.inputValue;
+
+      }
+=======
+
 }

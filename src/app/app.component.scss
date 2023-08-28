@@ -207,6 +207,11 @@ nav img {
     right: 37px;
     top: 0%;
     height: 477px;
+
+  }
+  @media screen and (max-width: 426px) {
+  width: 350px;
+  left: -38px;
   }
 }
 

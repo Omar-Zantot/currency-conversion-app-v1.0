@@ -1,5 +1,9 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { DropdownItem } from 'src/app/service/currency.model';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import {
+  CurrencyConversion,
+  DropdownItem,
+} from 'src/app/service/currency.model';
+import { CurrencyService } from 'src/app/service/fetch-data.service';
 
 @Component({
   selector: 'app-converter',
@@ -9,57 +13,84 @@ import { DropdownItem } from 'src/app/service/currency.model';
 export class ConverterComponent {
   @ViewChild('dropdownFrom', { static: false }) dropdownFrom?: ElementRef;
   @ViewChild('dropdownTo', { static: false }) dropdownTo?: ElementRef;
-  // selected?: string;
-  // selectedValue?: string;
-  // inputValue!: string;
-  @ViewChild('dropdown', { static: false }) dropdown?: ElementRef;
-  @ViewChild('select', { static: false }) select?: ElementRef;
-  selected?: string;
-  selectedValue?: string;
+  // protected showLoader = true;
+  @Input() showLoader = false; // Receive showLoader as Input
   inputValue!: number;
   outputValue: string = '';
 
-  selectedCurrencyFrom: string | null = null;
-  selectedCurrencyTo: string | null = null;
+  selectedCurrencyFrom!: string | null;
+  selectedCurrencyTo!: string | null;
+  errorMessage: string | null = null;
+
+  constructor(private currencyService: CurrencyService) {}
+
+  ngOnInit() {
+    // Initialize default values here if needed
+    this.setDefaultCurrencies();
+  }
+
+  setDefaultCurrencies() {
+    this.selectedCurrencyFrom = 'EGP';
+    this.selectedCurrencyTo = 'USD';
+  }
 
   getSelectValue() {
-    // Get selected currencies from the dropdowns
-    this.selectedCurrencyFrom =
-      this.dropdownFrom?.nativeElement.selectedCurrencyItem;
-    this.selectedCurrencyTo =
-      this.dropdownTo?.nativeElement.selectedCurrencyItem;
+    this.performCurrencyConversion();
+  }
 
-    // Perform your conversion logic using selected currencies and input value
-    if (this.selectedCurrencyFrom && this.selectedCurrencyTo) {
-      // Perform your conversion here and update the outputValue
-      // For example: this.outputValue = convert(this.inputValue, this.selectedCurrencyFrom, this.selectedCurrencyTo);
+  performCurrencyConversion() {
+    if (!this.isValidInput()) {
+      this.errorMessage = 'Please enter a valid amount.';
+      return;
+    }
+
+    if (!this.selectedCurrencyFrom || !this.selectedCurrencyTo) {
+      this.errorMessage = 'Please select both currencies.';
+      return;
+    }
+    if (
+      this.isValidInput() &&
+      this.selectedCurrencyFrom &&
+      this.selectedCurrencyTo
+    ) {
+      this.showLoader = true;
+
+      const v$ = this.currencyService.getConvertResult(
+        this.selectedCurrencyFrom,
+        this.selectedCurrencyTo,
+        this.inputValue
+      );
+      v$.subscribe({
+        next: (conversionResult) => {
+          this.outputValue = conversionResult.value.toFixed(2);
+        },
+        error: (error) => {
+          console.error('Conversion error:', error);
+        },
+        complete: () => {
+          this.showLoader = false; // Hide loader when data is fetched
+        },
+      });
     }
   }
 
-  // Handle the selected currency logic
-  onCurrencySelected(selectedCurrency: DropdownItem, isFromDropdown: boolean) {
-    if (isFromDropdown) {
-      this.selectedCurrencyFrom = selectedCurrency.code;
+  isValidInput(): boolean {
+    return !isNaN(this.inputValue) && this.inputValue >= 0;
+  }
 
-      // If the selected "From" currency is the same as the "To" currency, clear the "To" currency
+  onCurrencySelected(selectedCurrency: DropdownItem, isFromDropdown: boolean) {
+    const selectedCurrencyCode = selectedCurrency.code;
+
+    if (isFromDropdown) {
+      this.selectedCurrencyFrom = selectedCurrencyCode;
       if (this.selectedCurrencyFrom === this.selectedCurrencyTo) {
         this.selectedCurrencyTo = null;
       }
     } else {
-      this.selectedCurrencyTo = selectedCurrency.code;
-
-      // If the selected "To" currency is the same as the "From" currency, clear the "From" currency
+      this.selectedCurrencyTo = selectedCurrencyCode;
       if (this.selectedCurrencyTo === this.selectedCurrencyFrom) {
         this.selectedCurrencyFrom = null;
       }
-
-
-    // alert(`Input filed value${this.inputValue}`)
-    // alert(`Input filed value${this.outputValue}`)
-
-    if (!isNaN(this.inputValue) && this.inputValue > 0) {
-      const storeAmount = this.inputValue;
-
     }
   }
 }

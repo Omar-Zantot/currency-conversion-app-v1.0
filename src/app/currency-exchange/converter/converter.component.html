@@ -1,3 +1,4 @@
+<!-- <loader *ngIf="[showLoader]"></loader> -->
 <form>
   <div class="box-1 flex flex-col justify-center items-center gap-12">
     <div class="w-[472.782px] h-[81.487px]"></div>
@@ -6,7 +7,15 @@
       <div class="Amount">
         <h2>Amount</h2>
         <div>
-          <input name="text" type="text" [(ngModel)]="inputValue" required min="0" pattern="^(\$|£|€)?\d+(\.\d+)?$" />
+          <input
+            name="text"
+            type="text"
+            [(ngModel)]="inputValue"
+            required
+            min="0"
+            pattern="^(\$|£|€)?\d+(\.\d+)?$"
+            #amountInput="ngModel"
+          />
         </div>
       </div>
 
@@ -32,14 +41,26 @@
       <div class="Amount">
         <h2>Amount</h2>
         <div>
-          <input name="text" type="text" readonly="readonly" value="" />
+          <input
+            name="text"
+            type="text"
+            readonly="readonly"
+            [value]="showLoader ? 'Loading...' : outputValue"
+            class="result"
+            [disabled]="
+              !isValidInput() || !selectedCurrencyFrom || !selectedCurrencyTo
+            "
+          />
         </div>
       </div>
     </div>
     <div>
-      <button (click)="getSelectValue()" class="btn" type="button">
+      <button (click)="performCurrencyConversion()" class="btn" type="button">
         Convert
       </button>
     </div>
+    <ng-container *ngIf="showLoader">
+      <loader></loader>
+    </ng-container>
   </div>
 </form>

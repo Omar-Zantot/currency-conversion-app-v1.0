@@ -87,6 +87,10 @@ form {
       width: 318px;
     }
   }
+  .btn[disabled] {
+    opacity: 0.6; /* Reduce opacity for disabled state */
+    cursor: not-allowed; /* Change cursor style for disabled state */
+  }
 
   select {
     width: 277.404px;

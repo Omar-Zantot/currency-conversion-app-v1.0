@@ -92,7 +92,6 @@ export class ConverterComponent {
       if (this.selectedCurrencyTo === this.selectedCurrencyFrom) {
         this.selectedCurrencyFrom = null;
       }
->>>>> compare
 
 
       // alert(`Input filed value${this.inputValue}`)
@@ -102,6 +101,8 @@ export class ConverterComponent {
         const storeAmount = this.inputValue;
 
       }
-=======
+    }
+  }
+
 
 }

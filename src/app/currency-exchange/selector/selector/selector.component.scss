@@ -83,10 +83,17 @@
   transform: rotate(180deg);
 }
 
+@media screen and (max-width: 426px) {
+  .dropdown-button {
+    height: 72.36px;
+   width: 20px;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .dropdown-button {
     width: 152px;
-    height: 48px;
+    height: 72.36px;
     padding-right: 0px;
   }
   .custom-dropdown {

@@ -22,3 +22,10 @@ export interface DropdownItem {
   code: string;
   flagUrl: string;
 }
+
+export interface CurrencyComare {
+  from: string;
+  to: string;
+  // to: string[];
+  value: number;
+}

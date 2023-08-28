@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { DropdownItem } from 'src/app/service/currency.model';
+
 @Component({
   selector: 'app-selector',
   templateUrl: './selector.component.html',
@@ -35,6 +36,8 @@ export class SelectorComponent implements OnInit {
 
   isDropdownOpen = false;
   @Output() selectedCurrency = new EventEmitter<DropdownItem>();
+  // @Output() selectedCurrencyFrom = new EventEmitter<string>(); // Emit string event
+
   selectedCurrencyItem: DropdownItem | null = null;
 
   toggleDropdown() {
@@ -45,5 +48,6 @@ export class SelectorComponent implements OnInit {
     this.selectedCurrencyItem = currency;
     this.toggleDropdown();
     this.selectedCurrency.emit(currency);
+    // this.selectedCurrencyFrom.emit(currency.code);
   }
 }

@@ -24,7 +24,7 @@ import {
 export class CurrencyService {
   /** URLs */
   private baseUrl =
-    'https://currency-converter-production-3e05.up.railway.app/api/currency-conversions';
+    'http://ec2-3-144-40-233.us-east-2.compute.amazonaws.com:8000/api/currency-conversions';
   private currenciesListUrl = `${this.baseUrl}/currencies`;
 
   public currenciesStore$ = new BehaviorSubject<Currency[]>([]);

@@ -1,10 +1,12 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { finalize } from 'rxjs';
 import {
+  Currency,
   CurrencyConversion,
   DropdownItem,
 } from 'src/app/service/currency.model';
 import { CurrencyService } from 'src/app/service/fetch-data.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-converter',
@@ -17,16 +19,28 @@ export class ConverterComponent {
   @Input() showLoader = false; // Receive showLoader as Input
   inputValue!: number;
   outputValue: string = '';
+  storedCurrencyList = localStorage.getItem('currencyList');
+  parsedCurrencyList!: Currency[];
 
   selectedCurrencyFrom!: string | null;
   selectedCurrencyTo!: string | null;
   errorMessage: string | null = null;
 
-  constructor(private currencyService: CurrencyService) {}
+  constructor(
+    private currencyService: CurrencyService,
+    private sharedService: SharedService
+  ) {}
 
   ngOnInit() {
     // Initialize default values here if needed
     this.setDefaultCurrencies();
+  }
+
+  getCurrencyList(): Currency[] {
+    if (this.storedCurrencyList) {
+      this.parsedCurrencyList = JSON.parse(this.storedCurrencyList);
+    }
+    return this.parsedCurrencyList;
   }
 
   setDefaultCurrencies() {
@@ -36,6 +50,16 @@ export class ConverterComponent {
 
   getSelectValue() {
     this.performCurrencyConversion();
+  }
+
+  onConvertButtonClicked() {
+    console.log('here clicked');
+
+    // Call the onConvertButtonClicked method in AppComponent
+    this.sharedService.fetchExchangeRates(
+      this.getCurrencyList(),
+      this.selectedCurrencyFrom as string
+    );
   }
 
   performCurrencyConversion() {
@@ -52,6 +76,7 @@ export class ConverterComponent {
     ) {
       // console.log('clicked');
       if (this.inputValue) this.showLoader = true;
+      this.onConvertButtonClicked();
 
       const v$ = this.currencyService.getConvertResult(
         this.selectedCurrencyFrom,
@@ -82,10 +107,14 @@ export class ConverterComponent {
     const selectedCurrencyCode = selectedCurrency.code;
 
     if (isFromDropdown) {
+      // Update selectedCurrencyFrom in your existing logic
       this.selectedCurrencyFrom = selectedCurrencyCode;
       if (this.selectedCurrencyFrom === this.selectedCurrencyTo) {
         this.selectedCurrencyTo = null;
       }
+
+      // Call shared service to update selectedCurrencyFrom
+      this.sharedService.setSelectedCurrencyFrom(this.selectedCurrencyFrom);
     } else {
       this.selectedCurrencyTo = selectedCurrencyCode;
       if (this.selectedCurrencyTo === this.selectedCurrencyFrom) {

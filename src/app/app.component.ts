@@ -5,6 +5,7 @@ import { Currency, ExchangeRate } from './service/currency.model';
 import { delay, finalize, first, map, switchMap, take } from 'rxjs';
 import { ToggleStaticsData } from './static/toggle-data';
 import { ConverterComponent } from './currency-exchange/converter/converter.component';
+import { SharedService } from './shared/shared.service';
 
 @Component({
   selector: 'app-root',
@@ -23,32 +24,48 @@ export class AppComponent {
   // targetCurrencies = TargetCurrencies;
   // @ViewChild(ConverterComponent) converterComponent?: ConverterComponent;
 
-  baseCurrency: string = 'EGP'; // Initialize with a default value
+  // baseCurrency: string = 'EGP'; // Initialize with a default value
   // updateBaseCurrency(selectedCurrency: string) {
   //   this.baseCurrency = selectedCurrencyFrom;
   // }
 
   exchangeRates: ExchangeRate[] = [];
 
-  constructor(private currencyService: CurrencyService) {}
+  selectedCurrencyFrom!: string;
+  constructor(
+    private currencyService: CurrencyService,
+    private sharedService: SharedService
+  ) {
+    this.sharedService.selectedCurrencyFrom$.subscribe((currencyFrom) => {
+      this.selectedCurrencyFrom = currencyFrom;
+    });
+  }
+
+  // onConvertButtonClicked() {
+  //   // Call the fetchExchangeRates method from the SharedService
+  //   this.sharedService.fetchExchangeRates(currencyListbaseCurrency);
+  // }
 
   private _initGetCurrencies() {
     return this.currencyService.getCurrenciesFromStore$.pipe(
       switchMap((currencyList) => {
         localStorage.setItem('currencyList', JSON.stringify(currencyList));
         // console.log(currencyList);
-        return this.fetchExchangeRates(currencyList);
+        return this.fetchExchangeRates(currencyList, this.selectedCurrencyFrom);
       })
     );
   }
 
-  protected fetchExchangeRates(currencyList: Currency[]) {
+  protected fetchExchangeRates(
+    currencyList: Currency[],
+    selectedCurrencyFrom: string
+  ) {
     const targetCurrencies = (currencyList.filter((c) => c.checked) ?? []).map(
       (c) => c.code
     );
 
     return this.currencyService
-      .getLiveExchangeRates(this.baseCurrency, targetCurrencies)
+      .getLiveExchangeRates(selectedCurrencyFrom, targetCurrencies)
       .pipe(
         first(),
         map((rates) => {

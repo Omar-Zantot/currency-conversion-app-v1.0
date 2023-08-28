@@ -11,7 +11,12 @@ import {
   startWith,
   tap,
 } from 'rxjs';
-import { Currency, CurrencyConversion, ExchangeRate } from './currency.model';
+import {
+  Currency,
+  CurrencyCompare,
+  CurrencyConversion,
+  ExchangeRate,
+} from './currency.model';
 
 @Injectable({
   providedIn: 'root',
@@ -92,15 +97,13 @@ export class CurrencyService {
     return this.http.get<CurrencyConversion>(converterUrl);
   }
 
- 
   getCompareResult(
     from: string,
     to: string,
     amount: number
-  ): Observable<CurrencyConversion> {
+  ): Observable<CurrencyCompare[]> {
+    // EGP,BGP
     const compareterUrl = `${this.baseUrl}/compare?from=${from}&to=${to}&amount=${amount}`;
-    return this.http.get<CurrencyConversion>(compareterUrl);
-
-
+    return this.http.get<CurrencyCompare[]>(compareterUrl);
   }
 }

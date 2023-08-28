@@ -23,9 +23,8 @@ export interface DropdownItem {
   flagUrl: string;
 }
 
-export interface CurrencyComare {
+export interface CurrencyCompare {
   from: string;
   to: string;
-  // to: string[];
   value: number;
 }

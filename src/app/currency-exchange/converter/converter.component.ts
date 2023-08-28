@@ -1,4 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { finalize } from 'rxjs';
+import {
+  CurrencyConversion,
+  DropdownItem,
+} from 'src/app/service/currency.model';
+import { CurrencyService } from 'src/app/service/fetch-data.service';
 
 @Component({
   selector: 'app-converter',
@@ -6,19 +12,96 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./converter.component.scss'],
 })
 export class ConverterComponent {
-  @ViewChild('dropdown', { static: false }) dropdown?: ElementRef;
-  @ViewChild('select', { static: false }) select?: ElementRef;
-  selected?: string;
-  selectedValue?: string;
-  inputValue!: string;
+  @ViewChild('dropdownFrom', { static: false }) dropdownFrom?: ElementRef;
+  @ViewChild('dropdownTo', { static: false }) dropdownTo?: ElementRef;
+  // protected showLoader = true;
+  @Input() showLoader = false; // Receive showLoader as Input
+  inputValue!: number;
   outputValue: string = '';
-  options = ['EGP', 'USD', 'SAR', 'EUR'];
+
+  selectedCurrencyFrom!: string | null;
+  selectedCurrencyTo!: string | null;
+  errorMessage: string | null = null;
+
+  constructor(private currencyService: CurrencyService) {}
+
+  ngOnInit() {
+    // Initialize default values here if needed
+    this.setDefaultCurrencies();
+  }
+
+  setDefaultCurrencies() {
+    this.selectedCurrencyFrom = 'EGP';
+    this.selectedCurrencyTo = 'USD';
+  }
 
   getSelectValue() {
-    this.selected = this.select?.nativeElement.value;
-    this.selectedValue = this.dropdown?.nativeElement.value;
-
-    // alert(`Input filed value${this.inputValue}`)
-    // alert(`Input filed value${this.outputValue}`)
+    this.performCurrencyConversion();
   }
+
+  performCurrencyConversion() {
+    if (!this.isValidInput() && !this.inputValue) {
+      this.errorMessage = 'Please enter a valid amount.';
+      alert(this.errorMessage);
+      return;
+    }
+
+    if (
+      this.isValidInput() &&
+      this.selectedCurrencyFrom &&
+      this.selectedCurrencyTo
+    ) {
+      console.log('clicked');
+      this.showLoader = true;
+
+      const v$ = this.currencyService.getConvertResult(
+        this.selectedCurrencyFrom,
+        this.selectedCurrencyTo,
+        this.inputValue
+      );
+      v$.subscribe({
+        next: (conversionResult) => {
+          this.outputValue = conversionResult.value.toFixed(2);
+          this.showLoader = false;
+        },
+        error: (error) => {
+          console.error('Conversion error:', error);
+        },
+        complete: () => {
+          this.showLoader = false;
+          // Hide loader when data is fetched
+        },
+      });
+    }
+  }
+
+  isValidInput(): boolean {
+    return !isNaN(this.inputValue) && this.inputValue >= 0;
+  }
+
+  onCurrencySelected(selectedCurrency: DropdownItem, isFromDropdown: boolean) {
+    const selectedCurrencyCode = selectedCurrency.code;
+
+    if (isFromDropdown) {
+      this.selectedCurrencyFrom = selectedCurrencyCode;
+      if (this.selectedCurrencyFrom === this.selectedCurrencyTo) {
+        this.selectedCurrencyTo = null;
+      }
+    } else {
+      this.selectedCurrencyTo = selectedCurrencyCode;
+      if (this.selectedCurrencyTo === this.selectedCurrencyFrom) {
+        this.selectedCurrencyFrom = null;
+      }
+>>>>> compare
+
+
+      // alert(`Input filed value${this.inputValue}`)
+      // alert(`Input filed value${this.outputValue}`)
+
+      if (!isNaN(this.inputValue) && this.inputValue > 0) {
+        const storeAmount = this.inputValue;
+
+      }
+=======
+
 }

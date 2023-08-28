@@ -28,6 +28,8 @@ export class CurrencyService {
     .pipe(filter((v) => !!v?.length));
 
   constructor(private http: HttpClient) {
+    this.getConvertResult('USD', 'EGP', 200);
+
     interval(3600000)
       .pipe(
         startWith(0),
@@ -86,7 +88,19 @@ export class CurrencyService {
     to: string,
     amount: number
   ): Observable<CurrencyConversion> {
-    const converterUrl = `${this.baseUrl}//convert?from=${from}&to=${to}&amount=${amount}`;
+    const converterUrl = `${this.baseUrl}/convert?from=${from}&to=${to}&amount=${amount}`;
     return this.http.get<CurrencyConversion>(converterUrl);
+  }
+
+ 
+  getCompareResult(
+    from: string,
+    to: string,
+    amount: number
+  ): Observable<CurrencyConversion> {
+    const compareterUrl = `${this.baseUrl}/compare?from=${from}&to=${to}&amount=${amount}`;
+    return this.http.get<CurrencyConversion>(compareterUrl);
+
+
   }
 }

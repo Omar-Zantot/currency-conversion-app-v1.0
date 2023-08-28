@@ -1,9 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
-interface DropdownItem {
-  code: string;
-  flagUrl: string;
-}
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { DropdownItem } from 'src/app/service/currency.model';
 
 @Component({
   selector: 'app-selector',
@@ -14,8 +10,6 @@ export class SelectorComponent implements OnInit {
   menuList: DropdownItem[] = [];
   storedCurrencyList = localStorage.getItem('currencyList');
   @Input() defaultCurrencyCode = '';
-
-  @Input() customStyles: string[] = [];
 
   ngOnInit(): void {
     if (this.storedCurrencyList) {
@@ -42,6 +36,8 @@ export class SelectorComponent implements OnInit {
 
   isDropdownOpen = false;
   @Output() selectedCurrency = new EventEmitter<DropdownItem>();
+  // @Output() selectedCurrencyFrom = new EventEmitter<string>(); // Emit string event
+
   selectedCurrencyItem: DropdownItem | null = null;
 
   toggleDropdown() {
@@ -52,5 +48,6 @@ export class SelectorComponent implements OnInit {
     this.selectedCurrencyItem = currency;
     this.toggleDropdown();
     this.selectedCurrency.emit(currency);
+    // this.selectedCurrencyFrom.emit(currency.code);
   }
 }

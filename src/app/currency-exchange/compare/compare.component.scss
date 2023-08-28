@@ -43,6 +43,14 @@
     background-color: #f9f9f9;
     width: 222.096px;
     height: 70.136px;
+    @media screen and (max-width: 426px) {
+      //width: 161.85px;
+      //margin-left: 10px;
+      //margin-right: 20px;
+      width: 150px;
+    //margin-left: -37px;
+    }
+    
   }
 
   .dropdown-list {
@@ -68,9 +76,24 @@
     align-items: center;
   }
 
+  .from{
+    @media screen and (max-width: 426px) {
+    width: 200px;
+    margin-left: -60px;
+    }
+  }
+
   .dropdown-list li:hover {
     background-color: rgb(227, 227, 227);
   }
+  // .from{
+  //   @media screen and (max-width: 426px) {
+  //   //width: 110px;
+  //   margin-left: -50px;
+
+  //   width: 120px;
+  //   }
+  // }
 
   .flag-image {
     margin-left: 16.58px;
@@ -96,6 +119,27 @@
   gap: 0.9425rem;
 
   align-items: center;
+
+  @media screen and (max-width: 426px) {
+       // width: 320px;
+       margin-left: -90px;
+       width: 235px;
+       gap: 50px;
+      }
+
+   .Amount{
+    @media screen and (max-width: 426px) {
+    width: 120px;
+    }
+   }
+      .from
+      { @media screen and (max-width: 426px) {
+          //width: 110px;
+          //margin-left: 10px;
+      
+          width: 120px;
+          }  } 
+
   input {
     width: 222.096px;
     height: 70.136px;
@@ -113,7 +157,8 @@
     margin: auto;
 
     @media screen and (max-width: 426px) {
-      width: 140px;
+      //width: 140px;
+      width: 150px;
     }
 
     // @media screen and (max-width:426px){
@@ -131,7 +176,9 @@
     font-weight: 600;
     line-height: normal;
     @media screen and (max-width: 426px) {
-      width: 20px;
+      //width: 20px;
+      font-size: medium;
+      width: 200px;
     }
   }
 
@@ -177,7 +224,8 @@
   padding: auto;
 
   @media screen and (max-width: 426px) {
-    width: 400px;
+    width: 380px;
+    font-size: large;
   }
 }
 

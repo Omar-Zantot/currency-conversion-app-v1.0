@@ -8,6 +8,7 @@
   @media screen and (max-width: 426px) {
     width: 380px;
     left: 20px;
+    height: 71px;
   }
   @media screen and (max-width: 376px) {
     width: 311px;
@@ -17,6 +18,9 @@
 
 .toggle-btn {
   @apply flex w-[204.583px]  h-[69.35px]  p-[13.788px] justify-center items-center gap-[13.788px] rounded-[31.055px] bg-[transparent] transition-all duration-300;
+  @media screen and (max-width: 426px) {
+    height: 58px;
+  } 
 }
 .toggle-btn_active {
   @apply bg-white;

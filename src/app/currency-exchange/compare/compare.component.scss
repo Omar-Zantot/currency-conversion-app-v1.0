@@ -67,6 +67,10 @@
     max-height: 200px;
     overflow-y: auto;
     border-radius: 31px;
+
+    @media screen and (max-width:426px) {
+      width: 120px;
+    }
   }
 
   .dropdown-list li {
@@ -155,10 +159,12 @@
     font-weight: 600px;
     margin-bottom: 2rem;
     margin: auto;
+    outline-color: rgba(0, 157, 157, 0.2);
 
     @media screen and (max-width: 426px) {
       //width: 140px;
       width: 150px;
+      font-size: 20px;
     }
 
     // @media screen and (max-width:426px){

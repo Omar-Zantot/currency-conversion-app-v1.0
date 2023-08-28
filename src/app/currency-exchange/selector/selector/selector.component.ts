@@ -1,10 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
-interface DropdownItem {
-  code: string;
-  flagUrl: string;
-}
-
+import { DropdownItem } from 'src/app/service/currency.model';
 @Component({
   selector: 'app-selector',
   templateUrl: './selector.component.html',
@@ -14,8 +9,6 @@ export class SelectorComponent implements OnInit {
   menuList: DropdownItem[] = [];
   storedCurrencyList = localStorage.getItem('currencyList');
   @Input() defaultCurrencyCode = '';
-
-  @Input() customStyles: string[] = [];
 
   ngOnInit(): void {
     if (this.storedCurrencyList) {

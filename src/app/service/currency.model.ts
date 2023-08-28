@@ -17,3 +17,8 @@ export interface CurrencyConversion {
   to: string;
   value: number;
 }
+
+export interface DropdownItem {
+  code: string;
+  flagUrl: string;
+}

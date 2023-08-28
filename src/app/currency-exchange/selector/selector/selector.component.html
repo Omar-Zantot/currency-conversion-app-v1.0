@@ -1,9 +1,5 @@
 <div class="custom-dropdown">
-  <button
-    class="dropdown-button"
-    (click)="toggleDropdown()"
-    [ngClass]="customStyles"
-  >
+  <button class="dropdown-button" (click)="toggleDropdown()">
     <img
       *ngIf="selectedCurrencyItem"
       [src]="selectedCurrencyItem.flagUrl"

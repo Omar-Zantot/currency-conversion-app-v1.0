@@ -51,8 +51,8 @@ export class ConverterComponent {
       this.selectedCurrencyFrom &&
       this.selectedCurrencyTo
     ) {
-      console.log('clicked');
-      this.showLoader = true;
+      // console.log('clicked');
+      if (this.inputValue) this.showLoader = true;
 
       const v$ = this.currencyService.getConvertResult(
         this.selectedCurrencyFrom,
@@ -61,7 +61,7 @@ export class ConverterComponent {
       );
       v$.subscribe({
         next: (conversionResult) => {
-          this.outputValue = conversionResult.value.toFixed(2);
+          this.outputValue = conversionResult.value.toFixed(4);
           this.showLoader = false;
         },
         error: (error) => {
@@ -92,16 +92,13 @@ export class ConverterComponent {
       if (this.selectedCurrencyTo === this.selectedCurrencyFrom) {
         this.selectedCurrencyFrom = null;
       }
->>>>> compare
-
 
       // alert(`Input filed value${this.inputValue}`)
       // alert(`Input filed value${this.outputValue}`)
 
       if (!isNaN(this.inputValue) && this.inputValue > 0) {
         const storeAmount = this.inputValue;
-
       }
-=======
-
+    }
+  }
 }

@@ -7,26 +7,25 @@
       <div class="Amount">
         <h2 class="am-i">Amount</h2>
         <div>
-          <input name="text" type="string" [(ngModel)]="inputValue" />
+          <input
+            name="text"
+            type="text"
+            [(ngModel)]="inputValue"
+            required
+            min="0"
+            pattern="^(\$|£|€)?\d+(\.\d+)?$"
+            #amountInput="ngModel"
+          />
         </div>
       </div>
       <div class="from-country">
         <div class="from">
           <h2>From</h2>
-          <!-- <select #selectfrom>
-            <option value="EGP">
-              <img
-                src="./../../../assets/images/egy.png"
-                alt=""
-                class="w-[40.912px] h-[29.223px] z-10"
-              />
-            </option>
-            <option [value]="currency" *ngFor="let currency of currencies" >{{currency}}</option>
-
-          </select> -->
           <app-selector
             defaultCurrencyCode="EGP"
             class="custom-style"
+            (selectedCurrency)="onCurrencySelected($event, 'From')"
+            #dropdownFrom
           ></app-selector>
         </div>
       </div>
@@ -36,28 +35,23 @@
       <div class="from-country">
         <div class="from">
           <h2>Targeted Currency</h2>
-<!-- <select #selecttarget1>
-            <option [value]="currency" *ngFor="let currency of currencies">
-              {{ currency }}
-            </option>
-          </select> -->
           <app-selector
             defaultCurrencyCode="USD"
             class="custom-style"
+            (selectedCurrency)="onCurrencySelected($event, 'To1')"
+            #dropdownTo1
           ></app-selector>
         </div>
       </div>
       <div class="from-country">
         <div class="from">
           <h2>Targeted Currency</h2>
-          <!-- <select #selecttarget2>
-            <option [value]="currency" *ngFor="let currency of currencies">
-              {{ currency }}
-            </option>
-          </select> -->
+
           <app-selector
             defaultCurrencyCode="GBP"
             class="custom-style"
+            (selectedCurrency)="onCurrencySelected($event, 'To2')"
+            #dropdownTo2
           ></app-selector>
         </div>
       </div>
@@ -66,12 +60,22 @@
     <div class="amount-input">
       <div class="Amount">
         <div class="output">
-          <input name="text" readonly="readonly" type="text" />
+          <input
+            name="text"
+            readonly="readonly"
+            [value]="resultValue1"
+            type="text"
+          />
         </div>
       </div>
       <div class="Amount">
         <div class="output">
-          <input name="text" readonly="readonly" type="text" />
+          <input
+            name="text"
+            readonly="readonly"
+            [value]="resultValue2"
+            type="text"
+          />
         </div>
       </div>
     </div>
@@ -81,5 +85,9 @@
         Compare
       </button>
     </div>
+    <ng-container *ngIf="showLoader">
+      <loader></loader>
+    </ng-container>
   </div>
 </form>
+<!-- (click)="DoCompare()" -->

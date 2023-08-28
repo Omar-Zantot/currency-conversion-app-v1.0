@@ -10,15 +10,19 @@ export class ConverterComponent {
   @ViewChild('select', { static: false }) select?: ElementRef;
   selected?: string;
   selectedValue?: string;
-  inputValue!: string;
+  inputValue!: number;
   outputValue: string = '';
   options = ['EGP', 'USD', 'SAR', 'EUR'];
 
   getSelectValue() {
-    this.selected = this.select?.nativeElement.value;
-    this.selectedValue = this.dropdown?.nativeElement.value;
+
 
     // alert(`Input filed value${this.inputValue}`)
     // alert(`Input filed value${this.outputValue}`)
+
+    if (!isNaN(this.inputValue) && this.inputValue > 0) {
+      const storeAmount = this.inputValue;
+
+    }
   }
 }

@@ -28,7 +28,8 @@ export class AppComponent {
   private _initGetCurrencies() {
     return this.currencyService.getCurrenciesFromStore$.pipe(
       switchMap((currencyList) => {
-        console.log(currencyList);
+        localStorage.setItem('currencyList', JSON.stringify(currencyList));
+        // console.log(currencyList);
         return this.fetchExchangeRates(currencyList);
       })
     );

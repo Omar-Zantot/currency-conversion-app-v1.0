@@ -2,26 +2,15 @@
   @apply flex w-[472.782px] h-[81.487px] p-[15.112px] justify-center items-center gap-[15.112px] rounded-[34.037px] bg-[#F0F0F0];
   position: absolute;
   z-index: 20;
-  // left: 470px;
   left: calc(50vw - 246px);
   top: 181px;
   margin-block: 30px;
-  // @media screen and (max-width: 1024px) {
-  //   left: 273px;
-  // }
-  // @media screen and (max-width: 768px) {
-  //   left: 149px;
-  // }
-  // @media screen and (max-width: 520px) {
-  //   left: 23px;
-  // }
   @media screen and (max-width: 426px) {
     width: 380px;
     left: 20px;
   }
   @media screen and (max-width: 376px) {
     width: 311px;
-    // left: 28px;
     top: 141px;
   }
 }

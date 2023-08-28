@@ -1,0 +1,47 @@
+<div class="custom-dropdown">
+  <button
+    class="dropdown-button"
+    (click)="toggleDropdown()"
+    [ngClass]="customStyles"
+  >
+    <img
+      *ngIf="selectedCurrencyItem"
+      [src]="selectedCurrencyItem.flagUrl"
+      class="flag-image"
+      alt="Flag"
+    />
+    {{ selectedCurrencyItem ? selectedCurrencyItem.code : "Select Currency" }}
+    <span class="dropdown-arrow" [ngClass]="{ rotate: isDropdownOpen }"
+      ><svg
+        width="25"
+        height="25"
+        viewBox="0 0 25 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="mr-[14.12px]"
+      >
+        <path
+          d="M19.8073 8.34998L12.2691 15.8881L4.73096 8.34998"
+          stroke="#202020"
+          stroke-width="2.26145"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        /></svg
+    ></span>
+  </button>
+
+  <ul class="dropdown-list" *ngIf="isDropdownOpen">
+    <li class="dropdown-list" *ngIf="!menuList.length">
+      Currency list is empty
+    </li>
+    <li *ngFor="let currency of menuList" (click)="selectCurrency(currency)">
+      <img [src]="currency.flagUrl" class="flag-image" alt="Flag" />
+      <span>{{ currency.code }}</span>
+    </li>
+  </ul>
+</div>
+<div
+  *ngIf="isDropdownOpen"
+  class="page-overlay"
+  (click)="toggleDropdown()"
+></div>

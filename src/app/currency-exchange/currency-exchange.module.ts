@@ -3,13 +3,11 @@ import { CommonModule } from '@angular/common';
 import { ConverterComponent } from './converter/converter.component';
 import { CompareComponent } from './compare/compare.component';
 import { FormsModule } from '@angular/forms';
-// import { CustomSelectComponent } from './custom-select/custom-select.component';
-// import { CustumSelectComponent } from './custum-select/custum-select.component';
-
+import { SelectorComponent } from './selector/selector/selector.component';
 
 @NgModule({
-  declarations: [ConverterComponent, CompareComponent],
+  declarations: [ConverterComponent, CompareComponent, SelectorComponent],
   imports: [CommonModule, FormsModule],
-  exports: [ConverterComponent, CompareComponent],
+  exports: [ConverterComponent, CompareComponent, SelectorComponent],
 })
 export class CurrencyExchangeModule {}

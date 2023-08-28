@@ -12,17 +12,13 @@
 
       <div class="from">
         <h2>From</h2>
-        <select #select>
-          <option [value]="o" *ngFor="let o of options">{{ o }}</option>
-        </select>
+        <app-selector defaultCurrencyCode="EGP"></app-selector>
       </div>
     </div>
     <div class="fristslect">
       <div class="from">
         <h2>To</h2>
-        <select #dropdown>
-          <option [value]="o" *ngFor="let o of options">{{ o }}</option>
-        </select>
+        <app-selector defaultCurrencyCode="USD"></app-selector>
       </div>
 
       <div class="Amount">

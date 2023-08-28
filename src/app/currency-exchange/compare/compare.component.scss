@@ -16,10 +16,79 @@
     // width: 33.87256rem;
     // height: 43.5625rem;
   }
-  @media screen and (max-width:426px){
+  @media screen and (max-width: 426px) {
     width: 410px;
-    }
+  }
+}
+::ng-deep app-selector.custom-style {
+  .custom-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 222.096px;
+    height: 70.136px;
+    flex-shrink: 0;
+  }
+  .dropdown-button {
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    padding-left: 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7.54px;
+    border-radius: 30.153px;
+    border: 0.754px solid #c5c5c5;
+    background-color: #f9f9f9;
+    width: 222.096px;
+    height: 70.136px;
+  }
 
+  .dropdown-list {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 4px;
+    z-index: 1;
+    background-color: rgb(249, 249, 249);
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 88%;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 31px;
+  }
+
+  .dropdown-list li {
+    padding: 15px 9px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+
+  .dropdown-list li:hover {
+    background-color: rgb(227, 227, 227);
+  }
+
+  .flag-image {
+    margin-left: 16.58px;
+    background: lightgray 50% / cover no-repeat;
+    width: 42.214px;
+    height: 30.153px;
+    flex-shrink: 0;
+    object-fit: cover;
+    margin-right: 7.54px;
+    span {
+      color: #202020;
+      font-family: Open Sans;
+      font-size: 21.107px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
 }
 
 .amount-input {
@@ -43,9 +112,9 @@
     margin-bottom: 2rem;
     margin: auto;
 
-    @media screen and (max-width:426px){
+    @media screen and (max-width: 426px) {
       width: 140px;
-      }
+    }
 
     // @media screen and (max-width:426px){
     // width: 125px;
@@ -61,8 +130,8 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    @media screen and (max-width:426px){
-    width: 20px;
+    @media screen and (max-width: 426px) {
+      width: 20px;
     }
   }
 
@@ -74,8 +143,8 @@
     background: #f9f9f9;
     padding: 0 2rem;
     // color: #000;
-    @media screen and (max-width:426px){
-    width: 140px;
+    @media screen and (max-width: 426px) {
+      width: 140px;
     }
     option {
       color: #202020;
@@ -107,8 +176,8 @@
   line-height: normal;
   padding: auto;
 
-  @media screen and (max-width:426px){
-  width: 400px;
+  @media screen and (max-width: 426px) {
+    width: 400px;
   }
 }
 

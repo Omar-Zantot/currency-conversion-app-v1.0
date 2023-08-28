@@ -12,7 +12,8 @@
   display: grid;
   place-content: center;
   @media screen and (max-width: 426px) {
-    width: 356px;
+   // width: 356px;
+    width: 410px;
   }
   @media screen and (max-width: 376px) {
     width: 331px;
@@ -62,6 +63,11 @@ form {
       margin-bottom: 1.7669rem;
       @media screen and (max-width: 376px) {
         margin-bottom: 0.7669rem;
+        font-size: medium;
+      }
+      @media screen and (max-width: 426px) {
+        //margin-bottom: 0.7669rem;
+        font-size: medium;
       }
     }
   }
@@ -81,16 +87,24 @@ form {
     margin-top: 5%;
 
     @media screen and (max-width: 426px) {
-      width: 400px;
+      //width: 400px;
+      width: 380px;
+      font-size: large;
+      //height: 72.36px;
     }
     @media screen and (max-width: 376px) {
       width: 318px;
     }
   }
+
+ 
+  
+
   .btn[disabled] {
     opacity: 0.6; /* Reduce opacity for disabled state */
     cursor: not-allowed; /* Change cursor style for disabled state */
   }
+
 
   select {
     width: 277.404px;
@@ -103,6 +117,8 @@ form {
 
     @media screen and (max-width: 426px) {
       width: 150px;
+      //height: 72.36px;
+
     }
     option {
       color: #202020;

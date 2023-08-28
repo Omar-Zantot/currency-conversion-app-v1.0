@@ -11,7 +11,12 @@ export class ConverterComponent {
   @ViewChild('dropdownTo', { static: false }) dropdownTo?: ElementRef;
   // selected?: string;
   // selectedValue?: string;
-  inputValue!: string;
+  // inputValue!: string;
+  @ViewChild('dropdown', { static: false }) dropdown?: ElementRef;
+  @ViewChild('select', { static: false }) select?: ElementRef;
+  selected?: string;
+  selectedValue?: string;
+  inputValue!: number;
   outputValue: string = '';
 
   selectedCurrencyFrom: string | null = null;
@@ -47,6 +52,14 @@ export class ConverterComponent {
       if (this.selectedCurrencyTo === this.selectedCurrencyFrom) {
         this.selectedCurrencyFrom = null;
       }
+
+
+    // alert(`Input filed value${this.inputValue}`)
+    // alert(`Input filed value${this.outputValue}`)
+
+    if (!isNaN(this.inputValue) && this.inputValue > 0) {
+      const storeAmount = this.inputValue;
+
     }
   }
 }

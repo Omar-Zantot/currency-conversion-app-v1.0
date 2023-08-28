@@ -6,7 +6,7 @@
       <div class="Amount">
         <h2>Amount</h2>
         <div>
-          <input name="text" type="string" [(ngModel)]="inputValue" />
+          <input name="text" type="text" [(ngModel)]="inputValue" required min="0" pattern="^(\$|£|€)?\d+(\.\d+)?$" />
         </div>
       </div>
 

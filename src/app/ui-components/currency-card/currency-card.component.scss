@@ -12,6 +12,9 @@
   font-style: normal;
   font-weight: 500;
   line-height: 2.49006rem;
+  @media screen and (max-width: 376px) {
+    font-size: 1.5rem;
+  }
 }
 
 :host ::ng-deep .custom-checkbox {
@@ -67,6 +70,11 @@
       height: 4.83231rem;
       border-radius: 50%;
       object-fit: cover;
+
+      @media screen and (max-width: 376px) {
+        width: 3.83231rem;
+        height: 3.83231rem;
+      }
     }
 
     .currency-info {

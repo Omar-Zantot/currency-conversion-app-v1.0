@@ -67,6 +67,9 @@ nav {
   // @media screen and (max-width:426px) {
   // width: 240px;
   // }
+  @media screen and (max-width: 376px) {
+    margin-bottom: 11px;
+  }
 }
 nav img {
   width: 307px;
@@ -86,6 +89,13 @@ nav img {
   // @media screen and (max-width: 1023px) {
   //   // padding-inline: 0;
   // }
+
+  @media screen and (max-width: 426px) {
+    padding-inline: 0rem;
+  }
+  @media screen and (max-width: 376px) {
+    padding-inline: 0rem;
+  }
 
   width: 90%;
   margin-inline: auto;
@@ -192,6 +202,12 @@ nav img {
 
 .currency-dialog-card {
   padding-inline: 20px;
+  @media screen and (max-width: 376px) {
+    width: 300px;
+    right: 37px;
+    top: 0%;
+    height: 477px;
+  }
 }
 
 .title {

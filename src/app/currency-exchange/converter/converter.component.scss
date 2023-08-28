@@ -11,11 +11,20 @@
   z-index: 5;
   display: grid;
   place-content: center;
-  @media screen and (max-width:426px){
-  width: 410px;
+  @media screen and (max-width: 426px) {
+    width: 410px;
+  }
+  @media screen and (max-width: 376px) {
+    width: 331px;
+    height: 508px;
   }
 }
 
+.box-1 {
+  @media screen and (max-width: 376px) {
+    gap: 0.3rem;
+  }
+}
 form {
   .fristslect {
     display: flex;
@@ -38,6 +47,9 @@ form {
       padding: 0 2rem;
       // margin-bottom: 3rem;
       outline-color: rgba(0, 157, 157, 0.2);
+      @media screen and (max-width: 376px) {
+        width: 138px;
+      }
     }
 
     h2 {
@@ -48,6 +60,9 @@ form {
       font-weight: 600;
       line-height: normal;
       margin-bottom: 1.7669rem;
+      @media screen and (max-width: 376px) {
+        margin-bottom: 0.7669rem;
+      }
     }
   }
 
@@ -65,8 +80,11 @@ form {
     line-height: normal;
     margin-top: 5%;
 
-    @media screen and (max-width:426px){
-    width: 400px;
+    @media screen and (max-width: 426px) {
+      width: 400px;
+    }
+    @media screen and (max-width: 376px) {
+      width: 318px;
     }
   }
 
@@ -79,9 +97,8 @@ form {
     padding: 0 2rem;
     outline-color: rgba(0, 157, 157, 0.2);
 
-    @media screen and (max-width:426px) {
+    @media screen and (max-width: 426px) {
       width: 150px;
-      
     }
     option {
       color: #202020;

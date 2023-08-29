@@ -66,7 +66,7 @@ export class CurrencyService {
     return this.http.get<ExchangeRate[]>(liveExchangeRateUrl);
   }
 
-  private updateCurrenciesStore(currencies?: Currency[]) {
+  public updateCurrenciesStore(currencies?: Currency[]) {
     const favoriteCurrencies: Currency[] = this.getFavCurrencies();
     const _mappedCurrencies = (
       currencies ?? this.currenciesStore$.getValue()

@@ -15,42 +15,31 @@ import { SharedService } from './shared/shared.service';
 export class AppComponent {
   toggleData = ToggleStaticsData;
   activeTab = ToggleStaticsData[0].status;
+
   protected showLoader = true;
+
   public showFavoriteCurrencies = false;
 
   protected currenciesFromAPI$ = this._initGetCurrencies();
 
-  // baseCurrency = 'EGP';
-  // targetCurrencies = TargetCurrencies;
-  // @ViewChild(ConverterComponent) converterComponent?: ConverterComponent;
-
-  // baseCurrency: string = 'EGP'; // Initialize with a default value
-  // updateBaseCurrency(selectedCurrency: string) {
-  //   this.baseCurrency = selectedCurrencyFrom;
-  // }
-
   exchangeRates: ExchangeRate[] = [];
 
   selectedCurrencyFrom!: string;
+
   constructor(
     private currencyService: CurrencyService,
     private sharedService: SharedService
   ) {
     this.sharedService.selectedCurrencyFrom$.subscribe((currencyFrom) => {
       this.selectedCurrencyFrom = currencyFrom;
+      this.currencyService.updateCurrenciesStore();
     });
   }
-
-  // onConvertButtonClicked() {
-  //   // Call the fetchExchangeRates method from the SharedService
-  //   this.sharedService.fetchExchangeRates(currencyListbaseCurrency);
-  // }
 
   private _initGetCurrencies() {
     return this.currencyService.getCurrenciesFromStore$.pipe(
       switchMap((currencyList) => {
         localStorage.setItem('currencyList', JSON.stringify(currencyList));
-        // console.log(currencyList);
         return this.fetchExchangeRates(currencyList, this.selectedCurrencyFrom);
       })
     );

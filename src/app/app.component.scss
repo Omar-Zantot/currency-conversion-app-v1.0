@@ -34,11 +34,8 @@
   z-index: 5;
   display: grid;
   place-content: center;
-  // gap: 52px;
-  // position: absolute;
-  // left: 28%;
   margin-inline: auto;
-  overflow: auto; /* Add this line to enable scrollbars if content overflows */
+  overflow: auto;
 }
 
 .box-exchange {
@@ -64,9 +61,6 @@ nav {
   position: sticky;
   padding-top: 5.05rem;
   margin-bottom: 30px;
-  // @media screen and (max-width:426px) {
-  // width: 240px;
-  // }
   @media screen and (max-width: 376px) {
     margin-bottom: 11px;
   }
@@ -85,10 +79,6 @@ nav img {
   margin-bottom: 168.11px;
   margin-top: 78.83px;
   padding-inline: 3.5rem;
-
-  // @media screen and (max-width: 1023px) {
-  //   // padding-inline: 0;
-  // }
 
   @media screen and (max-width: 426px) {
     padding-inline: 0rem;
@@ -207,11 +197,10 @@ nav img {
     right: 37px;
     top: 0%;
     height: 477px;
-
   }
   @media screen and (max-width: 426px) {
-  width: 350px;
-  left: -38px;
+    width: 350px;
+    left: -38px;
   }
 }
 

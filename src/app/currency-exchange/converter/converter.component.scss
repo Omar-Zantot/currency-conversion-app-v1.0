@@ -52,6 +52,9 @@ form {
         font-size: 20px;
         width: 165px;
       }
+      @media screen and (max-width: 321px) {
+        width: 109px;
+      }
     }
 
     label {
@@ -69,6 +72,9 @@ form {
       }
       @media screen and (max-width: 426px) {
         font-size: medium;
+      }
+      @media screen and (max-width: 321px) {
+        font-size: 12px;
       }
     }
   }
@@ -88,14 +94,15 @@ form {
     // margin-top: 5%;
 
     @media screen and (max-width: 426px) {
-      //width: 400px;
-     // width: 380px;
       font-size: large;
-      //height: 72.36px;
       width: 340px;
     }
     @media screen and (max-width: 376px) {
       width: 318px;
+    }
+    @media screen and (max-width: 321px) {
+      width: 289px;
+      margin-top: 31px;
     }
   }
 

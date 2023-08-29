@@ -7,7 +7,7 @@
 
   margin-block: 30px;
   @media screen and (max-width: 426px) {
-   // width: 380px;
+    // width: 380px;
     //left: 20px;
     height: 71px;
     width: 350px;
@@ -17,6 +17,9 @@
     width: 311px;
     top: 259px;
     left: 24px;
+  }
+  @media screen and (max-width: 321px) {
+    width: 278px;
   }
 }
 

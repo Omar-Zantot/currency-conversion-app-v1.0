@@ -18,6 +18,11 @@ button {
     margin: auto;
   }
 }
+@media screen and (max-width: 321px) {
+  button {
+    width: 281px;
+  }
+}
 
 button span {
   color: #363636;

@@ -87,6 +87,9 @@ nav img {
   @media screen and (max-width: 376px) {
     padding-inline: 0rem;
   }
+  @media screen and (max-width: 321px) {
+    width: 100%;
+  }
 
   width: 90%;
   margin-inline: auto;
@@ -159,6 +162,9 @@ nav img {
     h3 {
       text-align: center;
     }
+  }
+  @media screen and (max-width: 321px) {
+    width: 283px;
   }
 }
 

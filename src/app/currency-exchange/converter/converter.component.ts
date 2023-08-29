@@ -67,6 +67,8 @@ export class ConverterComponent {
       this.errorMessage = 'Please enter a valid amount.';
       alert(this.errorMessage);
       return;
+    } else {
+      this.errorMessage = null; // Clear the error message here
     }
 
     if (

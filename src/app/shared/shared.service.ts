@@ -13,7 +13,6 @@ export class SharedService {
     const targetCurrencies = (currencyList.filter((c) => c.checked) ?? []).map(
       (c) => c.code
     );
-    console.log(targetCurrencies.length);
 
     return this.currencyService
       .getLiveExchangeRates(baseCurrency, targetCurrencies)

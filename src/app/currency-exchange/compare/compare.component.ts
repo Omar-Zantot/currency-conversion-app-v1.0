@@ -2,6 +2,7 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { DropdownItem } from 'src/app/service/currency.model';
 import { CurrencyService } from 'src/app/service/fetch-data.service';
 import { CurrencyCompare } from 'src/app/service/currency.model';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-compare',
@@ -22,7 +23,10 @@ export class CompareComponent {
   resultValue2: string = '';
   errorMessage: string | null = null;
 
-  constructor(private currencyService: CurrencyService) {
+  constructor(
+    private currencyService: CurrencyService,
+    private sharedService: SharedService
+  ) {
     this.setDefaultCurrencies();
   }
   setDefaultCurrencies() {
@@ -37,8 +41,6 @@ export class CompareComponent {
       return;
     } else {
       this.errorMessage = null;
-
-      // Clear the error message here
     }
     if (this.isValidInput()) {
       this.showLoader = true;
@@ -47,15 +49,16 @@ export class CompareComponent {
         `${this.selectedCurrencyTo1},${this.selectedCurrencyTo2}`,
         parseFloat(this.inputValue)
       );
+      console.log(
+        this.selectedCurrencyFrom,
+        `${this.selectedCurrencyTo1},${this.selectedCurrencyTo2}`,
+        parseFloat(this.inputValue)
+      );
       v$.subscribe({
         next: (conversionResults: CurrencyCompare[]) => {
           if (conversionResults.length >= 2) {
-            this.resultValue1 = (
-              conversionResults[0].value * parseFloat(this.inputValue)
-            ).toFixed(4);
-            this.resultValue2 = (
-              conversionResults[1].value * parseFloat(this.inputValue)
-            ).toFixed(4);
+            this.resultValue1 = conversionResults[0].value.toFixed(4);
+            this.resultValue2 = conversionResults[1].value.toFixed(4);
           }
         },
         error: (error) => {
@@ -80,6 +83,7 @@ export class CompareComponent {
     const selectedCurrencyCode = selectedCurrency.code;
     if (key === 'From') {
       this.selectedCurrencyFrom = selectedCurrencyCode;
+      this.sharedService.setSelectedCurrencyFrom(this.selectedCurrencyFrom);
     } else if (key === 'To1') {
       this.selectedCurrencyTo1 = selectedCurrencyCode;
     } else if (key === 'To2') {

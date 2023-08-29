@@ -1,10 +1,6 @@
 :host {
   @apply flex items-center justify-center fixed inset-0 z-50 bg-transparent;
-  // background: linear-gradient(
-  //   134deg,
-  //   rgba(174, 168, 168, 0.4) 0%,
-  //   rgba(0, 157, 157, 0.2) 100%
-  // );
+
   backdrop-filter: blur(4.504402160644531px);
 }
 

@@ -36,7 +36,6 @@ export class SelectorComponent implements OnInit {
 
   isDropdownOpen = false;
   @Output() selectedCurrency = new EventEmitter<DropdownItem>();
-  // @Output() selectedCurrencyFrom = new EventEmitter<string>(); // Emit string event
 
   selectedCurrencyItem: DropdownItem | null = null;
 
@@ -48,6 +47,5 @@ export class SelectorComponent implements OnInit {
     this.selectedCurrencyItem = currency;
     this.toggleDropdown();
     this.selectedCurrency.emit(currency);
-    // this.selectedCurrencyFrom.emit(currency.code);
   }
 }

@@ -12,7 +12,6 @@
   display: grid;
   place-content: center;
   @media screen and (max-width: 426px) {
-    // width: 356px;
     width: 410px;
   }
   @media screen and (max-width: 376px) {
@@ -29,7 +28,6 @@
 form {
   .fristslect {
     display: flex;
-    // padding: 10rem;
     gap: 0.9425rem;
 
     input {
@@ -46,11 +44,9 @@ form {
       font-weight: 600;
       line-height: normal;
       padding: 0 2rem;
-      // margin-bottom: 3rem;
       outline-color: rgba(0, 157, 157, 0.2);
       @media screen and (max-width: 376px) {
         width: 138px;
-        // font-size: 20px;
       }
       @media screen and (max-width: 426px) {
         font-size: 20px;
@@ -71,7 +67,6 @@ form {
         font-size: medium;
       }
       @media screen and (max-width: 426px) {
-        //margin-bottom: 0.7669rem;
         font-size: medium;
       }
     }

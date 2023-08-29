@@ -1,10 +1,5 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { finalize } from 'rxjs';
-import {
-  Currency,
-  CurrencyConversion,
-  DropdownItem,
-} from 'src/app/service/currency.model';
+import { Currency, DropdownItem } from 'src/app/service/currency.model';
 import { CurrencyService } from 'src/app/service/fetch-data.service';
 import { SharedService } from 'src/app/shared/shared.service';
 
@@ -77,7 +72,6 @@ export class ConverterComponent {
       this.selectedCurrencyFrom &&
       this.selectedCurrencyTo
     ) {
-      // console.log('clicked');
       if (this.inputValue) this.showLoader = true;
       this.onConvertButtonClicked();
 

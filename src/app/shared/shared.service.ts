@@ -10,8 +10,6 @@ export class SharedService {
   constructor(private currencyService: CurrencyService) {}
 
   fetchExchangeRates(currencyList: Currency[], baseCurrency: string) {
-    console.log('from service');
-
     const targetCurrencies = (currencyList.filter((c) => c.checked) ?? []).map(
       (c) => c.code
     );

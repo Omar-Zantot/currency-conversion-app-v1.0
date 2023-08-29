@@ -1,10 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { CurrencyService } from './service/fetch-data.service';
 import { Currency, ExchangeRate } from './service/currency.model';
-// import { TargetCurrencies } from './service/data.static';
-import { delay, finalize, first, map, switchMap, take } from 'rxjs';
+import { finalize, first, map, switchMap } from 'rxjs';
 import { ToggleStaticsData } from './static/toggle-data';
-import { ConverterComponent } from './currency-exchange/converter/converter.component';
 import { SharedService } from './shared/shared.service';
 
 @Component({

@@ -4,9 +4,9 @@
     <div class="flex justify-center items-center flex-col gap-[21.11px]">
       <div class="fristslect">
         <div class="Amount">
-          <h2>Amount</h2>
+          <label for="input-1" >Amount</label>
           <div>
-            <input
+            <input id="input-1"
               name="text"
               type="text"
               [(ngModel)]="inputValue"
@@ -19,8 +19,8 @@
         </div>
 
         <div class="from">
-          <h2>From</h2>
-          <app-selector
+          <label for="select-1">From</label>
+          <app-selector id="select-1"
             defaultCurrencyCode="EGP"
             (selectedCurrency)="onCurrencySelected($event, true)"
             #dropdownFrom
@@ -29,8 +29,8 @@
       </div>
       <div class="fristslect">
         <div class="from">
-          <h2>To</h2>
-          <app-selector
+          <label for="select-2">To</label>
+          <app-selector id="select-2"
             defaultCurrencyCode="USD"
             (selectedCurrency)="onCurrencySelected($event, false)"
             #dropdownTo
@@ -38,9 +38,9 @@
         </div>
 
         <div class="Amount">
-          <h2>Amount</h2>
+          <label for="input-2">Amount</label>
           <div>
-            <input
+            <input id="input-2"
               name="text"
               type="text"
               readonly="readonly"

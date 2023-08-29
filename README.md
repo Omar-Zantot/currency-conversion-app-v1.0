@@ -60,11 +60,7 @@ The `SharedService` is essential for managing currency selection and exchange ra
 
 ## Input Validation and Alerts ⚠️
 
-To ensure accurate conversions, the app employs robust input validation. It uses engaging emojis to enhance error alerts:
-
-- 🚫 **Invalid Amount**: Displays a red cross emoji for invalid amount entries.
-- ⚠️ **Insufficient Funds**: Warns users with an exclamation emoji if they attempt to convert more than they have.
-- ✅ **Conversion Success**: Celebrates successful conversions with a green checkmark emoji.
+To ensure accurate conversions, the app employs robust input validation. It uses engaging emojis to enhance error alerts
 
 ## Contributing 👥
 

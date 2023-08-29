@@ -12,7 +12,7 @@
   display: grid;
   place-content: center;
   @media screen and (max-width: 426px) {
-   // width: 356px;
+    // width: 356px;
     width: 410px;
   }
   @media screen and (max-width: 376px) {
@@ -50,12 +50,12 @@ form {
       outline-color: rgba(0, 157, 157, 0.2);
       @media screen and (max-width: 376px) {
         width: 138px;
-       // font-size: 20px;
+        // font-size: 20px;
       }
-       @media screen and (max-width: 426px) {
-      font-size: 20px;
+      @media screen and (max-width: 426px) {
+        font-size: 20px;
+      }
     }
-  }
 
     h2 {
       color: #fff;
@@ -88,7 +88,7 @@ form {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-top: 5%;
+    // margin-top: 5%;
 
     @media screen and (max-width: 426px) {
       //width: 400px;
@@ -101,14 +101,10 @@ form {
     }
   }
 
- 
-  
-
   .btn[disabled] {
     opacity: 0.6; /* Reduce opacity for disabled state */
     cursor: not-allowed; /* Change cursor style for disabled state */
   }
-
 
   select {
     width: 277.404px;
@@ -122,7 +118,6 @@ form {
     @media screen and (max-width: 426px) {
       width: 150px;
       //height: 72.36px;
-
     }
     option {
       color: #202020;

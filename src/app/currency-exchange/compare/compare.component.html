@@ -1,7 +1,7 @@
 <form>
-  <div class="flex flex-col justify-center items-center gap-12">
+  <div class="flex flex-col justify-center items-center gap-[18.99px]">
     <!-- <ng-content></ng-content> -->
-    <div class="w-[472.782px] h-[81.487px]"></div>
+    <div class="w-[472.782px] h-[70.487px]"></div>
 
     <div class="amount-input">
       <div class="Amount">
@@ -30,52 +30,53 @@
         </div>
       </div>
     </div>
+    <div class="flex flex-col gap items-center justify-center gap-[23.38px]">
+      <div class="amount-input">
+        <div class="from-country">
+          <div class="from">
+            <h2>Targeted Currency</h2>
+            <app-selector
+              defaultCurrencyCode="USD"
+              class="custom-style"
+              (selectedCurrency)="onCurrencySelected($event, 'To1')"
+              #dropdownTo1
+            ></app-selector>
+          </div>
+        </div>
+        <div class="from-country">
+          <div class="from">
+            <h2>Targeted Currency</h2>
 
-    <div class="amount-input">
-      <div class="from-country">
-        <div class="from">
-          <h2>Targeted Currency</h2>
-          <app-selector
-            defaultCurrencyCode="USD"
-            class="custom-style"
-            (selectedCurrency)="onCurrencySelected($event, 'To1')"
-            #dropdownTo1
-          ></app-selector>
+            <app-selector
+              defaultCurrencyCode="GBP"
+              class="custom-style"
+              (selectedCurrency)="onCurrencySelected($event, 'To2')"
+              #dropdownTo2
+            ></app-selector>
+          </div>
         </div>
       </div>
-      <div class="from-country">
-        <div class="from">
-          <h2>Targeted Currency</h2>
 
-          <app-selector
-            defaultCurrencyCode="GBP"
-            class="custom-style"
-            (selectedCurrency)="onCurrencySelected($event, 'To2')"
-            #dropdownTo2
-          ></app-selector>
+      <div class="amount-input">
+        <div class="Amount">
+          <div class="output">
+            <input
+              name="text"
+              readonly="readonly"
+              [value]="resultValue1"
+              type="text"
+            />
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="amount-input">
-      <div class="Amount">
-        <div class="output">
-          <input
-            name="text"
-            readonly="readonly"
-            [value]="resultValue1"
-            type="text"
-          />
-        </div>
-      </div>
-      <div class="Amount">
-        <div class="output">
-          <input
-            name="text"
-            readonly="readonly"
-            [value]="resultValue2"
-            type="text"
-          />
+        <div class="Amount">
+          <div class="output">
+            <input
+              name="text"
+              readonly="readonly"
+              [value]="resultValue2"
+              type="text"
+            />
+          </div>
         </div>
       </div>
     </div>

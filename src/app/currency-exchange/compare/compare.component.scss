@@ -1,6 +1,7 @@
 :host {
   width: 41.87256rem;
   height: 45.5625rem;
+
   border-radius: 1.13981rem;
   background: linear-gradient(
     134deg,
@@ -48,9 +49,8 @@
       //margin-left: 10px;
       //margin-right: 20px;
       width: 150px;
-    //margin-left: -37px;
+      //margin-left: -37px;
     }
-    
   }
 
   .dropdown-list {
@@ -68,7 +68,7 @@
     overflow-y: auto;
     border-radius: 31px;
 
-    @media screen and (max-width:426px) {
+    @media screen and (max-width: 426px) {
       width: 120px;
     }
   }
@@ -80,10 +80,10 @@
     align-items: center;
   }
 
-  .from{
+  .from {
     @media screen and (max-width: 426px) {
-    width: 200px;
-    margin-left: -60px;
+      width: 200px;
+      margin-left: -60px;
     }
   }
 
@@ -120,29 +120,30 @@
 
 .amount-input {
   display: flex;
-  gap: 0.9425rem;
+  gap: 30.68px;
 
   align-items: center;
 
   @media screen and (max-width: 426px) {
-       // width: 320px;
-       margin-left: -90px;
-       width: 235px;
-       gap: 50px;
-      }
+    // width: 320px;
+    margin-left: -90px;
+    width: 235px;
+    gap: 50px;
+  }
 
-   .Amount{
+  .Amount {
     @media screen and (max-width: 426px) {
-    width: 120px;
+      width: 120px;
     }
-   }
-      .from
-      { @media screen and (max-width: 426px) {
-          //width: 110px;
-          //margin-left: 10px;
-      
-          width: 120px;
-          }  } 
+  }
+  .from {
+    @media screen and (max-width: 426px) {
+      //width: 110px;
+      //margin-left: 10px;
+
+      width: 120px;
+    }
+  }
 
   input {
     width: 222.096px;
@@ -228,6 +229,7 @@
   font-weight: 700;
   line-height: normal;
   padding: auto;
+  margin-top: 35.65px;
 
   @media screen and (max-width: 426px) {
     width: 380px;

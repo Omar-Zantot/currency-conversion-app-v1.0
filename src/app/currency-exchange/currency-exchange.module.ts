@@ -5,10 +5,21 @@ import { CompareComponent } from './compare/compare.component';
 import { FormsModule } from '@angular/forms';
 import { SelectorComponent } from './selector/selector/selector.component';
 import { SharedModule } from '../shared/shared.module';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
-  declarations: [ConverterComponent, CompareComponent, SelectorComponent],
+  declarations: [
+    ConverterComponent,
+    CompareComponent,
+    SelectorComponent,
+    AlertComponent,
+  ],
   imports: [CommonModule, FormsModule, SharedModule],
-  exports: [ConverterComponent, CompareComponent, SelectorComponent],
+  exports: [
+    ConverterComponent,
+    CompareComponent,
+    SelectorComponent,
+    AlertComponent,
+  ],
 })
 export class CurrencyExchangeModule {}

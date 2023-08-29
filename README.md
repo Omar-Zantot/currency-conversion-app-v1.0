@@ -21,19 +21,19 @@ The Currency Conversion App allows users to perform various currency-related ope
 
 ## Features
 
-- Fetch live exchange rates for different currencies.
-- Perform currency conversion from one currency to another.
-- Compare conversion rates between two different currencies.
-- Select favorite currencies for quick access.
-- Responsive user interface for seamless usage on different devices.
+- 🔄 Fetch live exchange rates for different currencies.
+- 🔄 Perform currency conversion from one currency to another.
+- 🔄 Compare conversion rates between two different currencies.
+- ⭐ Select favorite currencies for quick access.
+- 📱 Responsive user interface for seamless usage on different devices.
 
 ## Tech Stack
 
-- Angular: Frontend framework for building user interfaces.
-- TypeScript: Programming language for building robust and scalable applications.
-- RxJS: Reactive programming library for handling asynchronous operations.
-- SCSS: CSS preprocessor for more organized and maintainable styles.
-- Tailwind CSS: Utility-first CSS framework for rapid UI development.
+- 🅰️ Angular: Frontend framework for building user interfaces.
+- 📜 TypeScript: Programming language for building robust and scalable applications.
+- ➰ RxJS: Reactive programming library for handling asynchronous operations.
+- 🎨 SCSS: CSS preprocessor for more organized and maintainable styles.
+- 🌟 Tailwind CSS: Utility-first CSS framework for rapid UI development.
 
 
 

@@ -1,9 +1,8 @@
-<div class="bg-red-500 text-white p-4 rounded">
+<div
+  class="error-message-container"
+  [class.hidden]="!errorMessage"
+  [class.visible]="errorMessage"
+>
   <p>{{ errorMessage }}</p>
-  <button
-    class="bg-white py-1 px-3 rounded cursor-pointer"
-    (click)="closeAlert()"
-  >
-    Close
-  </button>
+  <div class="progress-line"></div>
 </div>

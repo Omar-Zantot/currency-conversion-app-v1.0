@@ -20,6 +20,7 @@ export class CompareComponent {
   inputValue: string = '';
   resultValue1: string = '';
   resultValue2: string = '';
+  errorMessage: string | null = null;
 
   constructor(private currencyService: CurrencyService) {
     this.setDefaultCurrencies();
@@ -31,6 +32,14 @@ export class CompareComponent {
   }
 
   getSelectedValue() {
+    if (!this.isValidInput()) {
+      this.errorMessage = 'Please enter a valid amount.';
+      return;
+    } else {
+      this.errorMessage = null;
+
+      // Clear the error message here
+    }
     if (this.isValidInput()) {
       this.showLoader = true;
       const v$ = this.currencyService.getCompareResult(

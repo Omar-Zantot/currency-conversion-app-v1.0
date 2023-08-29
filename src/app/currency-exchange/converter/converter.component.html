@@ -1,4 +1,6 @@
 <form>
+  <app-alert *ngIf="errorMessage" [errorMessage]="errorMessage"></app-alert>
+
   <div class="box-1 flex flex-col justify-center items-center gap-[57.29px]">
     <div class="w-[472.782px] h-[40.487px]"></div>
     <div class="flex justify-center items-center flex-col gap-[21.11px]">

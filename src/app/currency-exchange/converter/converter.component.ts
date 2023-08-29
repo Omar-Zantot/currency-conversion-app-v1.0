@@ -63,12 +63,13 @@ export class ConverterComponent {
   }
 
   performCurrencyConversion() {
-    if (!this.isValidInput() && !this.inputValue) {
+    if (!this.isValidInput()) {
       this.errorMessage = 'Please enter a valid amount.';
-      alert(this.errorMessage);
       return;
     } else {
-      this.errorMessage = null; // Clear the error message here
+      this.errorMessage = null;
+
+      // Clear the error message here
     }
 
     if (
@@ -95,6 +96,7 @@ export class ConverterComponent {
         },
         complete: () => {
           this.showLoader = false;
+
           // Hide loader when data is fetched
         },
       });

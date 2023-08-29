@@ -8,9 +8,4 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class AlertComponent {
   @Input() errorMessage = '';
-  @Output() close = new EventEmitter<void>();
-
-  closeAlert() {
-    this.close.emit();
-  }
 }

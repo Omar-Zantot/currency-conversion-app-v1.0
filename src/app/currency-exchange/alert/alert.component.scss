@@ -1,0 +1,72 @@
+.error-message-container {
+  background-color: #9e3834;
+  color: whitesmoke;
+  padding: 1rem;
+  font-size: 1.2rem;
+  width: 475px;
+  height: 54px;
+  text-align: center;
+  border-radius: 0.375rem;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.3s;
+
+  &.hidden {
+    animation: slideOut 0.3s ease-in forwards, hideAnimation 3s 0.3s forwards;
+  }
+
+  &.visible {
+    animation: slideIn 0.3s ease-out forwards, hideAnimation 3s 2s forwards;
+  }
+
+  .progress-line {
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    animation: progressAnimation 3s linear;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes progressAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 450px;
+    visibility: hidden;
+  }
+}
+
+@keyframes hideAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}

@@ -2,14 +2,16 @@
   @apply flex w-[472.782px] h-[81.487px] p-[15.112px] justify-center items-center gap-[15.112px] rounded-[34.037px] bg-[#F0F0F0];
   position: absolute;
   z-index: 20;
-  left: calc(50vw - 242px);
+  left: calc(50vw - 240px);
   top: calc(38vh - 172px);
 
   margin-block: 30px;
   @media screen and (max-width: 426px) {
-    width: 380px;
-    left: 20px;
+   // width: 380px;
+    //left: 20px;
     height: 71px;
+    width: 350px;
+    left: 37px;
   }
   @media screen and (max-width: 376px) {
     width: 311px;

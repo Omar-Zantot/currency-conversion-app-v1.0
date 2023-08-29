@@ -5,9 +5,9 @@
 
     <div class="amount-input">
       <div class="Amount">
-        <h2 class="am-i">Amount</h2>
+        <label for="input-1" class="am-i">Amount</label>
         <div>
-          <input
+          <input id="input-1"
             name="text"
             type="text"
             [(ngModel)]="inputValue"
@@ -20,8 +20,8 @@
       </div>
       <div class="from-country">
         <div class="from">
-          <h2>From</h2>
-          <app-selector
+          <label for="select-1">From</label>
+          <app-selector id="select-1"
             defaultCurrencyCode="EGP"
             class="custom-style"
             (selectedCurrency)="onCurrencySelected($event, 'From')"
@@ -34,8 +34,8 @@
     <div class="amount-input">
       <div class="from-country">
         <div class="from">
-          <h2>Targeted Currency</h2>
-          <app-selector
+          <label for="select-2">Targeted Currency</label>
+          <app-selector id="select-2"
             defaultCurrencyCode="USD"
             class="custom-style"
             (selectedCurrency)="onCurrencySelected($event, 'To1')"
@@ -45,9 +45,9 @@
       </div>
       <div class="from-country">
         <div class="from">
-          <h2>Targeted Currency</h2>
+          <label for="select-3">Targeted Currency</label>
 
-          <app-selector
+          <app-selector id="select-3"
             defaultCurrencyCode="GBP"
             class="custom-style"
             (selectedCurrency)="onCurrencySelected($event, 'To2')"

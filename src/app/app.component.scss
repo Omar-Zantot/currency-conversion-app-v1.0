@@ -75,6 +75,12 @@ nav img {
   width: 307px;
   height: 52.489px;
   margin-left: 9.0625rem;
+  @media screen and (max-width: 462px) {
+    width: 260px;
+    }
+  @media screen and (max-width: 376px) {
+  width: 260px;
+  }
   @media screen and (max-width: 1024px) {
     margin: auto;
   }
@@ -207,10 +213,11 @@ nav img {
     right: 37px;
     top: 0%;
     height: 477px;
+   
 
   }
   @media screen and (max-width: 426px) {
-  width: 350px;
+  width: 300px;
   left: -38px;
   }
 }

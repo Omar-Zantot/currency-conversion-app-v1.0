@@ -12,6 +12,11 @@
   display: grid;
   place-content: center;
 
+  @media screen and (max-width: 376px) {
+    height: 700px;
+    width: 360px;
+    }
+  
   @media screen and (max-width: 768px) {
     // width: 33.87256rem;
     // height: 43.5625rem;
@@ -172,9 +177,9 @@
     // }
   }
 
-  h2 {
+  label {
     margin-bottom: 1rem;
-
+    display: block;
     color: #fff;
     font-family: Poppins;
     font-size: 20.456px;
@@ -229,8 +234,11 @@
   line-height: normal;
   padding: auto;
 
+  @media screen and (max-width: 376px) {
+  width: 340px;
+  }
   @media screen and (max-width: 426px) {
-    width: 380px;
+    width: 370px;
     font-size: large;
   }
 }

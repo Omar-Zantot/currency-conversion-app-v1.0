@@ -95,7 +95,8 @@ nav img {
     font-weight: 700;
     line-height: 2.4901rem;
     padding: 1.25rem;
-    font-family: "SF Pro Display";
+    // font-family: "SF Pro Display";
+    font-family: "Inter", sans-serif;
     font-size: 1.86756rem;
     @media screen and (max-width: 768px) {
       text-align: center;
@@ -139,7 +140,8 @@ nav img {
 
   h3 {
     color: #202020;
-    font-family: Montserrat;
+    // font-family: Montserrat;
+    font-family: "Inter", sans-serif;
     font-size: 2.03125rem;
     font-style: normal;
     font-weight: 600;

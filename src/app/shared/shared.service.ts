@@ -21,7 +21,6 @@ export class SharedService {
         map((rates) => {
           const _mappedCurrencies = currencyList.map((c) => {
             const _currencyRate = rates.find((r) => r?.to === c.code);
-            console.log(_currencyRate?.rate, 'rate');
 
             return { ...c, rate: _currencyRate?.rate } as Currency;
           });

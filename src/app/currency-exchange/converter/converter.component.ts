@@ -48,8 +48,6 @@ export class ConverterComponent {
   }
 
   onConvertButtonClicked() {
-    console.log('here clicked');
-
     // Call the onConvertButtonClicked method in AppComponent
     this.sharedService.fetchExchangeRates(
       this.getCurrencyList(),
@@ -98,7 +96,7 @@ export class ConverterComponent {
   }
 
   isValidInput(): boolean {
-    return !isNaN(this.inputValue) && this.inputValue >= 0;
+    return !isNaN(this.inputValue) && this.inputValue > 0;
   }
 
   onCurrencySelected(selectedCurrency: DropdownItem, isFromDropdown: boolean) {

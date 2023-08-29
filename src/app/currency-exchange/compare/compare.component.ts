@@ -49,11 +49,7 @@ export class CompareComponent {
         `${this.selectedCurrencyTo1},${this.selectedCurrencyTo2}`,
         parseFloat(this.inputValue)
       );
-      console.log(
-        this.selectedCurrencyFrom,
-        `${this.selectedCurrencyTo1},${this.selectedCurrencyTo2}`,
-        parseFloat(this.inputValue)
-      );
+
       v$.subscribe({
         next: (conversionResults: CurrencyCompare[]) => {
           if (conversionResults.length >= 2) {
@@ -76,7 +72,7 @@ export class CompareComponent {
 
   isValidInput(): boolean {
     return (
-      !isNaN(parseFloat(this.inputValue)) && parseFloat(this.inputValue) >= 0
+      !isNaN(parseFloat(this.inputValue)) && parseFloat(this.inputValue) > 0
     );
   }
   onCurrencySelected(selectedCurrency: DropdownItem, key: string) {
